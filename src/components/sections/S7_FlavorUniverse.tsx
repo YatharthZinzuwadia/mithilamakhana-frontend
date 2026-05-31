@@ -20,7 +20,7 @@ const flavors = [
 ];
 
 export default function S7_FlavorUniverse() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

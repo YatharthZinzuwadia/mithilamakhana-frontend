@@ -9,7 +9,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function S11_WhyMakhanaWins() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

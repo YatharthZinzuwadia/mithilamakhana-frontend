@@ -10,7 +10,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function S4_CraftedInMithila() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

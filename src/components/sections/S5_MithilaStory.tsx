@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
 export default function S5_MithilaStory() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

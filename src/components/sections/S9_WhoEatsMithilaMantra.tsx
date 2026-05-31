@@ -36,7 +36,7 @@ const archetypes = [
 ];
 
 export default function S9_WhoEatsMithilaMantra() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export default function S1_Hero() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const textRef1 = useRef<HTMLHeadingElement>(null);
   const textRef2 = useRef<HTMLHeadingElement>(null);
   const textRef3 = useRef<HTMLHeadingElement>(null);

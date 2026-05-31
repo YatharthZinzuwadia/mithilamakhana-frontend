@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function S6_TheMoment() {
-  const containerRef = useRef<HTMLSectionElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
