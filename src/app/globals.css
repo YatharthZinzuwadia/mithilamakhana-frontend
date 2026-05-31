@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #111111;
+  --color-brand-white: #F5F0E8;
+  --color-brand-gold: #E8B430;
+  
+  --color-flavor-raw: #4B0082;
+  --color-flavor-pepper: #0A1128;
+  --color-flavor-peri: #E34234;
+  --color-flavor-cheese: #D4A84B;
+  --color-flavor-cream: #85C742;
+  --color-flavor-pudina: #4A7C59;
+  
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+:root {
+  --background: var(--color-brand-black);
+  --foreground: var(--color-brand-white);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+}
+
+/* ─── Global animation keyframes ─── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
