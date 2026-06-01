@@ -67,7 +67,7 @@ export default function S8_MakhanaConstellation() {
         </h2>
 
         {/* Desktop Process Flow */}
-        <div className="hidden md:flex items-start justify-between relative mt-20">
+        <div className="hidden lg:flex items-start justify-between relative mt-20">
           {processSteps.map((step, index) => (
             <div key={step.id} className="relative flex flex-col items-center w-48 z-10">
               <div className="process-step w-24 h-24 bg-white text-brand-black rounded-full border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] flex items-center justify-center text-4xl mb-6 transform hover:scale-110 transition-transform cursor-default">
@@ -87,8 +87,8 @@ export default function S8_MakhanaConstellation() {
           ))}
         </div>
 
-        {/* Mobile Process Flow (Vertical) */}
-        <div className="md:hidden flex flex-col items-center gap-8 mt-10">
+        {/* Mobile & Tablet Process Flow (Vertical) */}
+        <div className="lg:hidden flex flex-col items-center gap-8 mt-10">
           {processSteps.map((step, index) => (
             <div key={step.id} className="process-step relative flex flex-col items-center text-center bg-white/10 p-6 rounded-3xl border-2 border-white/20 w-full max-w-sm">
               <div className="w-20 h-20 bg-white text-brand-black rounded-full border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] flex items-center justify-center text-3xl mb-4 transform -rotate-3">
