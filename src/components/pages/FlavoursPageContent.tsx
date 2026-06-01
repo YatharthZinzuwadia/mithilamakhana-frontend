@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { clsx } from "clsx";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -21,6 +22,7 @@ const flavors = [
     color: "#E8B430",
     bg: "bg-[#FFF9E6]",
     badge: "Best Seller",
+    heat: "Mild",
     image: "/images/product_pouch_raw.png",
   },
   {
@@ -34,6 +36,7 @@ const flavors = [
     color: "#D93838",
     bg: "bg-[#FFF0F0]",
     badge: "Fan Favourite",
+    heat: "Spicy",
     image: "/images/product_pouch_periperi.png",
   },
   {
@@ -47,6 +50,7 @@ const flavors = [
     color: "#F2C94C",
     bg: "bg-[#FFFBE6]",
     badge: "Kid Approved",
+    heat: "Mild",
     image: "/images/product_pouch_cheese.png",
   },
   {
@@ -60,6 +64,7 @@ const flavors = [
     color: "#6FCF97",
     bg: "bg-[#F0FFF6]",
     badge: "New Arrival",
+    heat: "Mild",
     image: "/images/product_pouch_cheese.png",
   },
   {
@@ -73,6 +78,7 @@ const flavors = [
     color: "#27AE60",
     bg: "bg-[#F0FFF8]",
     badge: "Summer Pick",
+    heat: "Mild",
     image: "/images/product_pouch_raw.png",
   },
   {
@@ -86,177 +92,147 @@ const flavors = [
     color: "#2D3748",
     bg: "bg-[#F7F7F7]",
     badge: "Chef's Choice",
+    heat: "Medium",
     image: "/images/product_pouch_pepper.png",
   },
 ];
 
+type FilterType = "All" | "Mild" | "Medium" | "Spicy";
+
 export default function FlavoursPageContent() {
-  const [active, setActive] = useState(0);
-  const cardRefs = useRef<HTMLDivElement[]>([]);
+  const [activeId, setActiveId] = useState(flavors[0].id);
+  const [filter, setFilter] = useState<FilterType>("All");
   const detailRef = useRef<HTMLDivElement>(null);
 
+  // Filter logic
+  const filteredFlavors = flavors.filter(f => filter === "All" || f.heat === filter);
+
+  // Reset active flavor if current active is filtered out
   useEffect(() => {
-    gsap.from(".flavor-hero-text", {
-      y: 60,
-      stagger: 0.15,
-      duration: 0.9,
-      ease: "power3.out",
+    if (!filteredFlavors.find(f => f.id === activeId)) {
+      setActiveId(filteredFlavors[0]?.id || flavors[0].id);
+    }
+  }, [filter, filteredFlavors, activeId]);
+
+  useEffect(() => {
+    gsap.from(".flavor-filter", {
+      y: 20,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.5,
+      ease: "power2.out",
     });
 
     gsap.from(".flavor-card", {
-      y: 80,
-      rotation: () => Math.random() * 8 - 4,
-      stagger: 0.1,
-      duration: 0.7,
+      scale: 0.9,
+      opacity: 0,
+      stagger: 0.05,
+      duration: 0.4,
       ease: "back.out(1.5)",
-      delay: 0.4,
     });
-  }, []);
+  }, [filter]);
 
   useEffect(() => {
     if (detailRef.current) {
       gsap.fromTo(
         detailRef.current,
-        { opacity: 0, x: 30 },
-        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.2)" }
       );
     }
-  }, [active]);
+  }, [activeId]);
 
-  const flavor = flavors[active];
+  const activeFlavor = flavors.find(f => f.id === activeId) || flavors[0];
 
   return (
-    <main className="w-full min-h-screen bg-brand-white pt-24 pb-32 md:pb-32">
-      {/* Page Hero */}
-      <section className="py-16 text-center px-6 border-b-8 border-brand-black bg-[#F2C94C]">
-        <h1 className="flavor-hero-text font-display text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(0,0,0,1)] text-brand-black leading-tight">
-          Our Flavours
+    <main className="w-full min-h-screen bg-brand-white pt-24 pb-32">
+      
+      {/* ── Filter Bar ── */}
+      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <h1 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tighter text-brand-black">
+          Pick Your Crunch
         </h1>
-        <p className="flavor-hero-text font-body text-lg md:text-xl font-bold mt-4 max-w-xl mx-auto text-brand-black/80">
-          6 varieties. Infinite reasons to snack.
-        </p>
-      </section>
-
-      {/* Flavor Selector Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
-          {flavors.map((f, i) => (
-            <div key={f.id} className="flavor-card">
-              <button
-                onClick={() => setActive(i)}
-                className={`w-full h-full relative flex flex-col items-center gap-3 p-4 rounded-2xl border-4 transition-all duration-300 cursor-pointer ${
-                  active === i
-                    ? "border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] -translate-y-2 scale-105 z-10"
-                    : "border-transparent hover:border-brand-black hover:shadow-[4px_4px_0_rgba(0,0,0,1)] hover:-translate-y-1"
-                }`}
-                style={{ backgroundColor: active === i ? f.color : "#fff" }}
-              >
-                {/* Badge */}
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-black text-white text-[10px] font-black uppercase px-3 py-1 rounded-full whitespace-nowrap z-20">
-                  {f.badge}
-                </span>
-
-                <div className="relative w-16 h-20 mt-2">
-                  <Image src={f.image} alt={f.name} fill className="object-contain drop-shadow-lg" />
-                </div>
-                <span
-                  className={`font-display font-black text-xs uppercase text-center leading-tight mt-auto ${
-                    active === i ? "text-white drop-shadow" : "text-brand-black"
-                  }`}
-                >
-                  {f.name}
-                </span>
-              </button>
-            </div>
+        
+        <div className="flex flex-wrap justify-center gap-3 bg-white p-2 rounded-full border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)]">
+          {(["All", "Mild", "Medium", "Spicy"] as FilterType[]).map(f => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={clsx(
+                "flavor-filter px-6 py-2 rounded-full font-black uppercase text-xs tracking-widest transition-all",
+                filter === f 
+                  ? "bg-brand-black text-white" 
+                  : "bg-transparent text-brand-black hover:bg-gray-100"
+              )}
+            >
+              {f}
+            </button>
           ))}
         </div>
+      </div>
 
-        {/* Active Flavor Detail */}
-        <div
-          ref={detailRef}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+      {/* ── Active Flavor Full-Hero Section ── */}
+      <section 
+        ref={detailRef}
+        className="max-w-7xl mx-auto px-6 mb-24"
+      >
+        <div 
+          className="relative w-full rounded-[2rem] border-8 border-brand-black shadow-[16px_16px_0_rgba(0,0,0,1)] overflow-hidden flex flex-col lg:flex-row min-h-[70vh]"
+          style={{ backgroundColor: activeFlavor.color }}
         >
-          {/* Left: Big Pouch */}
-          <div
-            className="relative w-full aspect-[3/4] max-w-sm mx-auto rounded-3xl border-4 border-brand-black shadow-[16px_16px_0_rgba(0,0,0,1)] overflow-hidden flex items-center justify-center"
-            style={{ backgroundColor: flavor.color + "30" }}
-          >
-            <div
-              className="absolute inset-0 opacity-50 rounded-3xl"
-              style={{ backgroundColor: flavor.color }}
-            />
-            <div className="relative w-3/4 h-3/4 z-10">
+          {/* Subtle background pattern */}
+          <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'radial-gradient(#000 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
+
+          {/* Left: Product Image & Badges */}
+          <div className="relative w-full lg:w-1/2 flex flex-col items-center justify-center p-10 lg:border-r-8 lg:border-brand-black bg-white/10 backdrop-blur-sm">
+            <span className="bg-brand-black text-white px-6 py-2 rounded-full font-black uppercase tracking-widest text-sm border-2 border-white shadow-[4px_4px_0_rgba(0,0,0,1)] mb-8 transform -rotate-2">
+              {activeFlavor.heat} Heat
+            </span>
+            
+            <div className="relative w-64 h-80 md:w-80 md:h-[400px] hover:scale-105 hover:rotate-3 transition-transform duration-500 z-10 drop-shadow-[20px_20px_0_rgba(0,0,0,0.4)]">
               <Image
-                src={flavor.image}
-                alt={flavor.name}
+                src={activeFlavor.image}
+                alt={activeFlavor.name}
                 fill
-                className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                className="object-contain"
               />
             </div>
           </div>
 
-          {/* Right: Info */}
-          <div className="flex flex-col gap-6">
-            <div>
-              <span
-                className="inline-block font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full border-2 border-brand-black mb-4"
-                style={{ backgroundColor: flavor.color }}
-              >
-                {flavor.badge}
-              </span>
-              <h2 className="font-display text-5xl md:text-6xl font-black uppercase tracking-tighter">
-                {flavor.name}
-              </h2>
-              <p
-                className="font-body text-xl font-bold mt-2"
-                style={{ color: flavor.color !== "#E8B430" && flavor.color !== "#F2C94C" ? flavor.color : "#666" }}
-              >
-                {flavor.tagline}
-              </p>
-            </div>
+          {/* Right: Info Panel */}
+          <div className="w-full lg:w-1/2 bg-white p-8 md:p-12 flex flex-col justify-center">
+            <span 
+              className="inline-block self-start font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full border-2 border-brand-black mb-4"
+              style={{ backgroundColor: activeFlavor.color, color: activeFlavor.color === '#2D3748' || activeFlavor.color === '#D93838' ? 'white' : 'black' }}
+            >
+              {activeFlavor.badge}
+            </span>
+            
+            <h2 className="font-display text-5xl md:text-7xl font-black uppercase tracking-tighter mb-2 text-brand-black leading-none">
+              {activeFlavor.name}
+            </h2>
+            <p className="font-display text-xl md:text-2xl font-bold text-gray-500 uppercase tracking-tight mb-8">
+              {activeFlavor.tagline}
+            </p>
 
-            <div className="bg-white border-4 border-brand-black rounded-2xl p-6 shadow-[6px_6px_0_rgba(0,0,0,1)]">
+            <div className="bg-gray-50 border-4 border-brand-black rounded-2xl p-6 shadow-[6px_6px_0_rgba(0,0,0,1)] mb-8">
               <p className="font-body text-base md:text-lg font-bold text-brand-black/80 leading-relaxed">
-                {flavor.description}
+                {activeFlavor.description}
               </p>
             </div>
 
-            {/* Ingredients */}
-            <div className="bg-brand-black text-white rounded-2xl p-6 border-4 border-brand-black">
-              <h3 className="font-display font-black uppercase tracking-widest text-sm mb-3 text-[#F2C94C]">
-                Ingredients
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {flavor.ingredients.map((ing) => (
-                  <span
-                    key={ing}
-                    className="text-sm font-bold px-3 py-1 rounded-full border-2 border-white/30"
-                  >
-                    {ing}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Nutrition Highlights */}
-            <div className="grid grid-cols-4 gap-3">
-              {Object.entries(flavor.nutrition).map(([key, val]) => (
-                <div
-                  key={key}
-                  className="bg-white border-4 border-brand-black rounded-xl p-3 text-center shadow-[4px_4px_0_rgba(0,0,0,1)]"
-                >
-                  <div className="font-display font-black text-xl" style={{ color: flavor.color }}>
-                    {val}
-                  </div>
-                  <div className="font-bold uppercase text-xs text-brand-black/60 mt-1">{key}</div>
+            <div className="grid grid-cols-4 gap-3 mb-8">
+              {Object.entries(activeFlavor.nutrition).map(([key, val]) => (
+                <div key={key} className="bg-white border-2 border-brand-black rounded-xl p-3 text-center shadow-[4px_4px_0_rgba(0,0,0,1)] flex flex-col justify-center">
+                  <div className="font-display font-black text-lg md:text-xl" style={{ color: activeFlavor.color }}>{val}</div>
+                  <div className="font-bold uppercase text-[10px] text-brand-black/60 mt-1">{key}</div>
                 </div>
               ))}
             </div>
 
-            {/* CTA */}
             <a
               href="mailto:sales@mithilamantra.com?subject=Bulk Order Enquiry"
-              className="inline-flex items-center justify-center gap-3 bg-brand-black text-white font-black uppercase tracking-widest text-lg px-8 py-4 rounded-2xl border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:translate-x-1 transition-transform duration-200"
+              className="inline-flex items-center justify-center gap-3 bg-brand-black text-white font-black uppercase tracking-widest text-lg px-8 py-5 rounded-2xl border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[12px_12px_0_rgba(0,0,0,1)] transition-all duration-200"
             >
               Order This Flavour →
             </a>
@@ -264,19 +240,43 @@ export default function FlavoursPageContent() {
         </div>
       </section>
 
-      {/* Bottom Marquee */}
-      <div className="overflow-hidden border-y-4 border-brand-black bg-[#D93838] py-4">
-        <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite] font-display text-xl font-black uppercase text-white">
-          &nbsp;MAKHANA • GUILT-FREE • HIGH PROTEIN • GLUTEN FREE • VEGAN • ROASTED NOT FRIED • LOW CALORIE • MAKHANA • GUILT-FREE • HIGH PROTEIN • GLUTEN FREE • VEGAN • ROASTED NOT FRIED • LOW CALORIE •&nbsp;
-        </div>
-      </div>
+      {/* ── Flavor Selector Grid ── */}
+      <section className="max-w-7xl mx-auto px-6">
+        <h3 className="font-display font-black text-2xl uppercase tracking-tighter mb-6 text-brand-black">
+          Explore {filter === "All" ? "All" : filter} Flavors
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {filteredFlavors.map((f) => (
+            <div key={f.id} className="flavor-card">
+              <button
+                onClick={() => {
+                  setActiveId(f.id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={clsx(
+                  "w-full h-full relative flex flex-col items-center gap-3 p-4 rounded-2xl border-4 transition-all duration-300 cursor-pointer overflow-hidden group",
+                  activeId === f.id
+                    ? "border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] bg-white"
+                    : "border-transparent bg-gray-50 hover:border-brand-black hover:shadow-[4px_4px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:bg-white"
+                )}
+              >
+                {/* Active Indicator Line */}
+                {activeId === f.id && (
+                  <div className="absolute top-0 left-0 w-full h-2" style={{ backgroundColor: f.color }} />
+                )}
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      ` }} />
+                <div className="relative w-16 h-20 mt-4 group-hover:scale-110 transition-transform">
+                  <Image src={f.image} alt={f.name} fill className="object-contain drop-shadow-md" />
+                </div>
+                <span className="font-display font-black text-xs uppercase text-center leading-tight mt-auto text-brand-black">
+                  {f.name}
+                </span>
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </main>
   );
 }

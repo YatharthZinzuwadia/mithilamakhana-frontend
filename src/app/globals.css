@@ -73,3 +73,13 @@ html.lenis, html.lenis body {
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+
+/* ─── Ultra-HD Fluid Scaling ─── */
+/* At 2000px and above, scale the entire layout proportionally to the viewport */
+@media (min-width: 2000px) {
+  html {
+    /* 1rem = 16px at exactly 2000px. Scales infinitely upwards. */
+    font-size: 0.8vw; 
+  }
+}
+

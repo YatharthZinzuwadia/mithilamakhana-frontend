@@ -55,7 +55,7 @@ export default function S1_Hero() {
       </div>
 
       {/* Floating Framed Hero Area */}
-      <div className="relative w-full max-w-7xl mx-auto h-[95vh] md:h-[110vh] rounded-[2rem] border-4 md:border-8 border-brand-black shadow-[8px_8px_0_rgba(255,0,127,1),_16px_16px_0_rgba(0,255,204,1)] overflow-hidden flex items-center justify-center bg-brand-black pb-5">
+      <div className="relative w-full max-w-7xl mx-auto flex-1 min-h-[80vh] md:min-h-[85vh] rounded-[2rem] border-4 md:border-8 border-brand-black shadow-[8px_8px_0_rgba(255,0,127,1),_16px_16px_0_rgba(0,255,204,1)] overflow-hidden flex items-center justify-center bg-brand-black pb-5 mt-6 md:mt-10 mb-4">
         
         {/* Funky Poster Background */}
         <div className="absolute inset-0 z-0 bg-brand-black">

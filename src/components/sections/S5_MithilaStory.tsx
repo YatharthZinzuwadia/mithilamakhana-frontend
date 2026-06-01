@@ -43,21 +43,44 @@ export default function S5_MithilaStory() {
             THE MITHILA STORY
           </h2>
           
-          <div className="s5-item bg-white p-6 border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] rounded-2xl mb-6 transform -rotate-1">
+          <div className="s5-item bg-white p-6 border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] rounded-2xl mb-8 transform -rotate-1">
             <p className="font-body text-lg md:text-xl font-bold leading-relaxed">
-              Makhana isn't made in a factory. It is born in the aquatic heart of Bihar. 
+              Makhana isn't made in a factory. It is born in the aquatic heart of Darbhanga, Bihar — India's makhana capital. 
               <br/><br/>
-              It takes months of careful cultivation in lotus ponds, followed by the rigorous, ancient practice of hand-harvesting by the Mallah community.
+              It takes months of careful cultivation in lotus ponds. Once hand-harvested, the seeds are sun-dried on traditional bamboo mats before being air-popped to perfection.
+              <br/><br/>
+              <span className="text-[#D93838] uppercase tracking-widest text-base">No artificial preservatives. No palm oil. No MSG.</span>
             </p>
           </div>
 
-          <div className="s5-item flex items-center gap-4">
-            <div className="w-16 h-16 bg-[#6FCF97] rounded-full border-4 border-brand-black flex items-center justify-center shadow-[4px_4px_0_rgba(0,0,0,1)]">
-              <span className="font-black text-2xl">✓</span>
+          <div className="s5-item grid grid-cols-2 gap-4">
+            <div className="flex items-center gap-3 bg-[#6FCF97]/20 p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-10 h-10 bg-[#6FCF97] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0">
+                <span className="font-black text-lg">✓</span>
+              </div>
+              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">Authentic<br/>Origin</p>
             </div>
-            <p className="font-display font-black text-2xl uppercase tracking-widest">
-              Authentic Origin
-            </p>
+            
+            <div className="flex items-center gap-3 bg-[#F2C94C]/20 p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-10 h-10 bg-[#F2C94C] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0">
+                <span className="font-black text-lg">🌱</span>
+              </div>
+              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">100%<br/>Natural</p>
+            </div>
+            
+            <div className="flex items-center gap-3 bg-[#D93838]/20 p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-10 h-10 bg-[#D93838] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0 text-white">
+                <span className="font-black text-lg">🌾</span>
+              </div>
+              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">Gluten<br/>Free</p>
+            </div>
+            
+            <div className="flex items-center gap-3 bg-[#2D3748]/10 p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-10 h-10 bg-[#2D3748] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0 text-white">
+                <span className="font-black text-lg">✅</span>
+              </div>
+              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">FSSAI<br/>Certified</p>
+            </div>
           </div>
         </div>
 

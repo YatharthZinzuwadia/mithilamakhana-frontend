@@ -9,7 +9,6 @@ import S6_TheMoment from "@/components/sections/S6_TheMoment";
 import S7_FlavorUniverse from "@/components/sections/S7_FlavorUniverse";
 import S8_MakhanaConstellation from "@/components/sections/S8_MakhanaConstellation";
 import S9_WhoEatsMithilaMantra from "@/components/sections/S9_WhoEatsMithilaMantra";
-import S10_NaturalPuffLineup from "@/components/sections/S10_NaturalPuffLineup";
 import S11_WhyMakhanaWins from "@/components/sections/S11_WhyMakhanaWins";
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
       <S7_FlavorUniverse />
       <S8_MakhanaConstellation />
       <S9_WhoEatsMithilaMantra />
-      <S10_NaturalPuffLineup />
       <S11_WhyMakhanaWins />
     </main>
   );

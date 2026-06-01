@@ -14,24 +14,28 @@ const timeline = [
     title: "Ancient Roots",
     text: "Makhana cultivation begins in the wetlands of Mithila region, Bihar. Ancient Ayurvedic texts reference lotus seeds as a sacred, healing food.",
     color: "#E8B430",
+    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80",
   },
   {
     year: "1400s",
     title: "Royal Pantries",
     text: "Makhana becomes a prized ingredient in the royal kitchens of Mithila kingdom. Offered in temple prasad and grand feasts.",
     color: "#6FCF97",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
   },
   {
     year: "2000s",
     title: "The Export Surge",
     text: "India becomes the world's largest producer of Makhana, accounting for 90%+ of global production, yet it remains largely unknown to the modern consumer.",
     color: "#D93838",
+    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef4564?w=800&q=80",
   },
   {
     year: "Today",
     title: "Mithila Mantra Makhanas is Born",
     text: "We take this 2500-year-old superfood and make it the snack the world deserves to know. From Darbhanga, Bihar — to every pantry, as Mithila Mantra Makhanas.",
     color: "#F2C94C",
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
   },
 ];
 
@@ -118,45 +122,66 @@ export default function OurStoryPageContent() {
       </div>
 
       {/* Timeline */}
-      <section className="timeline-section max-w-5xl mx-auto px-6 py-24">
-        <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-12">
-          The 2,500 Year Journey
-        </h2>
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-brand-black hidden md:block" />
+      <section className="timeline-section relative max-w-full overflow-hidden px-6 py-24 bg-[#FFF9E6]">
+        {/* Madhubani-inspired Background Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-radial-gradient(circle at 0 0, transparent 0, #000 12px), repeating-linear-gradient(#000, #000)', backgroundSize: '24px 24px' }} />
 
-          <div className="flex flex-col gap-12">
-            {timeline.map((t, i) => (
-              <div
-                key={t.year}
-                className={`timeline-item flex flex-col md:flex-row gap-6 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-              >
-                <div className={`w-full md:w-[45%] ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                  <div
-                    className="inline-block bg-white border-4 border-brand-black rounded-2xl p-6 shadow-[6px_6px_0_rgba(0,0,0,1)]"
-                    style={{ transform: `rotate(${i % 2 === 0 ? -1 : 1}deg)` }}
-                  >
-                    <span
-                      className="font-black text-xs uppercase tracking-widest block mb-2"
-                      style={{ color: t.color }}
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-16">
+            The 2,500 Year Journey
+          </h2>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-2 bg-brand-black hidden md:block border-x-2 border-white" />
+
+            <div className="flex flex-col gap-16 md:gap-24">
+              {timeline.map((t, i) => (
+                <div
+                  key={t.year}
+                  className={`timeline-item flex flex-col md:flex-row gap-8 md:gap-12 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                >
+                  {/* Text Content */}
+                  <div className={`w-full md:w-[45%] flex ${i % 2 === 0 ? "justify-end" : "justify-start"}`}>
+                    <div
+                      className="inline-block bg-white border-4 border-brand-black rounded-3xl p-8 shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform duration-300 max-w-lg"
+                      style={{ transform: `rotate(${i % 2 === 0 ? -1 : 1}deg)` }}
                     >
-                      {t.year}
-                    </span>
-                    <h3 className="font-display font-black text-xl uppercase mb-2">{t.title}</h3>
-                    <p className="font-body font-bold text-brand-black/70 text-sm">{t.text}</p>
+                      <span
+                        className="font-black text-sm uppercase tracking-widest block mb-3 px-3 py-1 bg-brand-black rounded-full inline-block"
+                        style={{ color: t.color }}
+                      >
+                        {t.year}
+                      </span>
+                      <h3 className="font-display font-black text-2xl uppercase mb-3 text-brand-black">{t.title}</h3>
+                      <p className="font-body font-bold text-brand-black/80 text-base leading-relaxed">{t.text}</p>
+                    </div>
+                  </div>
+
+                  {/* Center dot */}
+                  <div
+                    className="w-10 h-10 rounded-full border-4 border-brand-black flex-shrink-0 hidden md:flex items-center justify-center shadow-[4px_4px_0_rgba(0,0,0,1)] z-10"
+                    style={{ backgroundColor: t.color }}
+                  >
+                    <div className="w-3 h-3 bg-white rounded-full" />
+                  </div>
+
+                  {/* Image Content */}
+                  <div className="w-full md:w-[45%]">
+                    <div 
+                      className="w-full aspect-video md:aspect-[4/3] rounded-3xl border-4 border-brand-black overflow-hidden shadow-[10px_10px_0_rgba(0,0,0,1)] group"
+                      style={{ transform: `rotate(${i % 2 === 0 ? 2 : -2}deg)` }}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img 
+                        src={t.image} 
+                        alt={t.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
+                    </div>
                   </div>
                 </div>
-
-                {/* Center dot */}
-                <div
-                  className="w-8 h-8 rounded-full border-4 border-brand-black flex-shrink-0 hidden md:block shadow-[4px_4px_0_rgba(0,0,0,1)]"
-                  style={{ backgroundColor: t.color }}
-                />
-
-                <div className="w-full md:w-[45%]" />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

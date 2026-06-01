@@ -115,11 +115,31 @@ export default function NutritionPageContent() {
       {/* Hero */}
       <section className="py-20 pt-32 text-center px-6 border-b-8 border-brand-black bg-[#6FCF97]">
         <h1 className="nutr-hero font-display text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(0,0,0,1)] text-white leading-tight">
-          The Nutrition Facts
+          Our Quality Promise
         </h1>
-        <p className="nutr-hero font-body text-xl md:text-2xl font-bold mt-4 max-w-2xl mx-auto text-brand-black bg-white px-6 py-3 rounded-2xl border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] inline-block">
-          Not all snacks are created equal. See the proof.
+        <p className="nutr-hero font-body text-xl md:text-2xl font-bold mt-4 max-w-2xl mx-auto text-brand-black bg-white px-6 py-3 rounded-2xl border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] inline-block transform -rotate-1">
+          Zero compromise on purity, taste, and your health.
         </p>
+      </section>
+
+      {/* Certifications */}
+      <section className="bg-[#F2C94C] py-12 px-6 border-b-8 border-brand-black overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <h2 className="font-display font-black text-3xl uppercase tracking-tighter md:w-1/3 text-center md:text-left">
+            Certified Excellence
+          </h2>
+          <div className="flex-1 flex flex-wrap justify-center md:justify-end gap-6">
+            {["100% Organic", "Non-GMO Verified", "Gluten-Free Certified", "Vegan", "HACCP Certified"].map((cert, i) => (
+              <div 
+                key={cert} 
+                className="bg-white px-6 py-3 border-4 border-brand-black rounded-full shadow-[4px_4px_0_rgba(0,0,0,1)] font-black text-sm uppercase tracking-widest hover:-translate-y-1 transition-transform"
+                style={{ transform: `rotate(${i % 2 === 0 ? 2 : -2}deg)` }}
+              >
+                {cert}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Comparison Table */}

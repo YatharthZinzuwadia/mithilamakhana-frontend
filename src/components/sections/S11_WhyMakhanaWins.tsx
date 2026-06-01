@@ -85,15 +85,66 @@ export default function S11_WhyMakhanaWins() {
         </h2>
         
         <div className="s11-card bg-[#F2C94C] p-6 md:p-10 border-4 border-brand-black rounded-3xl shadow-[10px_10px_0_rgba(0,0,0,1)] text-left mb-10 transform rotate-1">
-          <p className="font-body text-lg md:text-xl leading-relaxed font-bold mb-4">
+          <p className="font-body text-lg md:text-xl leading-relaxed font-bold mb-8 text-center md:text-left">
             At <span className="bg-white px-2 py-1 rounded border-2 border-brand-black">Mithila Mantra Makhanas</span>, we believe that healthy snacking doesn't have to be boring. 
-            Born from the desire to combine nutrition with great taste, our brand brings you a delicious range of flavored makhanas (fox nuts) that are roasted to perfection.
+            Sourced from the finest farms and processed with care, our makhanas are the ultimate superfood.
           </p>
-          <p className="font-body text-base md:text-lg font-bold text-brand-black/80">
-            Sourced from the finest farms and processed with care, Mithila Mantra Makhanas are 
-            <span className="text-[#D93838] uppercase px-1"> low in calories, high in protein, and rich in antioxidants </span> 
-            – making them the perfect companion for your fitness goals, work breaks, binge-watching sessions, or even travel munchies.
-          </p>
+          
+          <div className="bg-white rounded-2xl border-4 border-brand-black p-6 shadow-[6px_6px_0_rgba(0,0,0,0.5)]">
+            <h3 className="font-display font-black text-2xl uppercase mb-6 text-center tracking-tight border-b-2 border-brand-black/10 pb-4">
+              The Nutritional Edge <span className="text-sm font-bold block text-gray-500 normal-case tracking-normal mt-1">(per 100g)</span>
+            </h3>
+
+            {/* Protein Comparison */}
+            <div className="mb-8">
+              <div className="flex justify-between font-black uppercase text-sm mb-2">
+                <span>Protein</span>
+                <span className="text-[#D93838]">Makhana Wins</span>
+              </div>
+              
+              <div className="space-y-3 font-body text-sm font-bold">
+                <div className="flex items-center gap-3">
+                  <span className="w-24 text-right">Makhana</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+                    <div className="bg-[#6FCF97] h-full" style={{ width: '90%' }}></div>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand-black text-xs font-black">9.7g</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 opacity-60">
+                  <span className="w-24 text-right">Potato Chips</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+                    <div className="bg-gray-400 h-full" style={{ width: '60%' }}></div>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-xs font-black">6.5g</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Calories Comparison */}
+            <div>
+              <div className="flex justify-between font-black uppercase text-sm mb-2">
+                <span>Calories</span>
+                <span className="text-[#6FCF97]">Less is More</span>
+              </div>
+              
+              <div className="space-y-3 font-body text-sm font-bold">
+                <div className="flex items-center gap-3">
+                  <span className="w-24 text-right">Makhana</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+                    <div className="bg-[#F2C94C] h-full" style={{ width: '65%' }}></div>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand-black text-xs font-black">347 kcal</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 opacity-60">
+                  <span className="w-24 text-right">Potato Chips</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+                    <div className="bg-[#D93838] h-full" style={{ width: '100%' }}></div>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-xs font-black">536 kcal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="s11-card inline-block bg-brand-black text-white p-6 border-4 border-white rounded-3xl shadow-[8px_8px_0_rgba(255,255,255,1)] transform -rotate-2">

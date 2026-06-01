@@ -19,6 +19,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,6 +41,17 @@ export default function Header() {
 
   const isHomePage = pathname === "/";
   const shouldApplyScrolledStyle = isScrolled || !isHomePage;
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 300);
+  };
 
   return (
     <>
@@ -71,8 +83,8 @@ export default function Header() {
         <nav className="hidden md:flex flex-1 justify-center space-x-6 items-center">
           <div 
             className="relative"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <Link
               href="/flavours"
@@ -144,7 +156,7 @@ export default function Header() {
     </header>
     
     {/* Mobile Bottom Dock Navigation */}
-    <div className="md:hidden fixed bottom-6 left-0 w-full px-4 z-50 pointer-events-auto">
+    <div className="md:hidden fixed bottom-4 pb-[env(safe-area-inset-bottom,16px)] left-0 w-full px-4 z-50 pointer-events-auto">
       <div className="bg-brand-white border-4 border-brand-black rounded-full shadow-[8px_8px_0_rgba(0,0,0,1)] flex items-center justify-between p-1 relative">
         
         <Link href="/" className={clsx(

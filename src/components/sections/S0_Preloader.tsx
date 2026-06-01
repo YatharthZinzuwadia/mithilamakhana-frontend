@@ -81,13 +81,24 @@ export default function S0_Preloader() {
         viewBox="0 0 100 100" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="mb-8"
+        className="mb-8 overflow-visible"
       >
-        {/* Minimal Lotus Motif */}
-        <path d="M50 85 C 30 65, 10 50, 50 15 C 90 50, 70 65, 50 85 Z" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M50 85 C 30 75, 20 60, 50 25 C 80 60, 70 75, 50 85 Z" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M50 85 C 40 80, 35 65, 50 35 C 65 65, 60 80, 50 85 Z" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M50 85 V 35" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+        {/* Blooming Lotus Motif */}
+        <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+          {/* Center Petal */}
+          <path d="M50 80 C 45 60, 35 40, 50 15 C 65 40, 55 60, 50 80 Z" />
+          {/* Inner Left Petal */}
+          <path d="M50 80 C 35 70, 20 50, 30 25 C 40 40, 45 60, 50 80 Z" />
+          {/* Inner Right Petal */}
+          <path d="M50 80 C 65 70, 80 50, 70 25 C 60 40, 55 60, 50 80 Z" />
+          {/* Outer Left Petal */}
+          <path d="M50 80 C 25 80, 5 60, 10 40 C 20 55, 35 70, 50 80 Z" />
+          {/* Outer Right Petal */}
+          <path d="M50 80 C 75 80, 95 60, 90 40 C 80 55, 65 70, 50 80 Z" />
+          {/* Water ripples / Base */}
+          <path d="M30 90 Q 50 95 70 90" strokeWidth="1.5" />
+          <path d="M40 95 Q 50 98 60 95" strokeWidth="1.5" />
+        </g>
       </svg>
 
       <div ref={textRef} className="font-display text-sm tracking-[0.3em] uppercase opacity-0 text-brand-white">

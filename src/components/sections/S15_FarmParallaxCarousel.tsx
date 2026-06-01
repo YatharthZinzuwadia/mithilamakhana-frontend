@@ -59,30 +59,29 @@ export default function S15_FarmParallaxCarousel() {
       {/* ── Autoscrolling strip ─────────────────────────────────── */}
       {/* Pure CSS infinite marquee – no GSAP dependency, no flicker */}
       <div
-        className="flex gap-6 w-max"
+        className="flex w-max"
         style={{ animation: "marquee 40s linear infinite" }}
       >
         {doubled.map((img, i) => (
-          <div
-            key={i}
-            className="relative flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] h-[52vw] md:h-[27vw] lg:h-[20vw] rounded-3xl overflow-hidden border-4 border-white/20 shadow-[8px_8px_0_rgba(255,255,255,0.1)] group"
-          >
-            {/* Image fills the card */}
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              unoptimized
-            />
+          <div key={i} className="pr-6">
+            <div className="relative flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] h-[52vw] md:h-[27vw] lg:h-[20vw] rounded-3xl overflow-hidden border-4 border-white/20 shadow-[8px_8px_0_rgba(255,255,255,0.1)] group">
+              {/* Image fills the card */}
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                unoptimized
+              />
 
-            {/* Dark gradient overlay so the label is always readable */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              {/* Dark gradient overlay so the label is always readable */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-            {/* Label chip at bottom-left */}
-            <span className="absolute bottom-4 left-4 bg-[#F2C94C] text-brand-black font-black text-xs uppercase tracking-widest px-3 py-1 rounded-full border-2 border-brand-black">
-              {img.label}
-            </span>
+              {/* Label chip at bottom-left */}
+              <span className="absolute bottom-4 left-4 bg-[#F2C94C] text-brand-black font-black text-xs uppercase tracking-widest px-3 py-1 rounded-full border-2 border-brand-black">
+                {img.label}
+              </span>
+            </div>
           </div>
         ))}
       </div>
