@@ -171,7 +171,7 @@ export default function NutritionPageContent() {
                       <div
                         className="bar-fill h-full rounded-full flex items-center justify-end pr-3 font-black text-sm"
                         data-width={`${mPct}%`}
-                        style={{ width: `${mPct}%`, backgroundColor: n.color }}
+                        style={{ width: `${mPct}%`, backgroundColor: n.color, color: n.color === '#D93838' ? 'white' : 'black' }}
                       >
                         {n.makhana}{n.unit}
                       </div>
@@ -230,8 +230,8 @@ export default function NutritionPageContent() {
             >
               <span className="text-4xl mb-4 block">{b.icon}</span>
               <h3
-                className="font-display font-black text-lg uppercase tracking-tight mb-2"
-                style={{ color: b.color }}
+                className="font-display font-black text-lg uppercase tracking-tight mb-2 text-brand-black border-b-4 pb-1 inline-block"
+                style={{ borderColor: b.color }}
               >
                 {b.title}
               </h3>

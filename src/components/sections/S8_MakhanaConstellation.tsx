@@ -67,21 +67,23 @@ export default function S8_MakhanaConstellation() {
         </h2>
 
         {/* Desktop Process Flow */}
-        <div className="hidden lg:flex items-start justify-between relative mt-20">
+        <div className="hidden lg:flex items-start w-full relative mt-20">
           {processSteps.map((step, index) => (
-            <div key={step.id} className="relative flex flex-col items-center w-48 z-10">
-              <div className="process-step w-24 h-24 bg-white text-brand-black rounded-full border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] flex items-center justify-center text-4xl mb-6 transform hover:scale-110 transition-transform cursor-default">
-                {step.icon}
-                <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#D93838] text-white rounded-full border-2 border-brand-black flex items-center justify-center font-black text-sm">
-                  {step.id}
+            <div key={step.id} className={index < processSteps.length - 1 ? "flex-1 flex items-start" : "flex items-start"}>
+              <div className="relative flex flex-col items-center w-48 z-10 flex-shrink-0">
+                <div className="process-step w-24 h-24 bg-white text-brand-black rounded-full border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] flex items-center justify-center text-4xl mb-6 transform hover:scale-110 transition-transform cursor-default">
+                  {step.icon}
+                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#D93838] text-white rounded-full border-2 border-brand-black flex items-center justify-center font-black text-sm">
+                    {step.id}
+                  </div>
                 </div>
+                <h3 className="process-step font-display font-black text-xl uppercase mb-2 text-[#F2C94C]">{step.title}</h3>
+                <p className="process-step font-body text-sm font-bold text-gray-300 px-2">{step.desc}</p>
               </div>
-              <h3 className="process-step font-display font-black text-xl uppercase mb-2 text-[#F2C94C]">{step.title}</h3>
-              <p className="process-step font-body text-sm font-bold text-gray-300">{step.desc}</p>
-              
-              {/* Connector line */}
+
+              {/* Connector line filling the gap */}
               {index < processSteps.length - 1 && (
-                <div className="process-connector absolute top-12 left-[60%] w-full h-2 bg-brand-white border-y-2 border-brand-black -z-10" />
+                <div className="flex-1 h-2 bg-brand-white border-y-2 border-brand-black mt-12 process-connector -ml-16 -mr-16 z-0" />
               )}
             </div>
           ))}

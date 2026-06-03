@@ -10,74 +10,102 @@ if (typeof window !== "undefined") {
 }
 
 export default function S4_CraftedInMithila() {
-  const containerRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".s4-box", {
+      gsap.from(".bento-item", {
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 70%",
+          trigger: sectionRef.current,
+          start: "top 75%",
         },
-        scale: 0.8,
-        y: 50,
+        y: 40,
         opacity: 0,
-        rotation: () => Math.random() * 10 - 5,
-        stagger: 0.2,
+        stagger: 0.15,
         duration: 0.8,
-        ease: "back.out(1.5)"
+        ease: "power3.out"
       });
-    }, containerRef);
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
     <section 
-      ref={containerRef}
-      className="relative w-full py-32 px-6 bg-[#2D3748] text-white flex flex-col items-center justify-center overflow-hidden border-b-8 border-brand-black"
+      ref={sectionRef}
+      className="relative w-full py-24 md:py-32 px-4 md:px-8 bg-brand-white text-brand-black border-b-8 border-brand-black"
     >
-      {/* Dramatic Background */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1615486171448-4fd1ab6c9682?q=80&w=2000&auto=format&fit=crop" 
-          alt="Dark moody texture"
-          className="w-full h-full object-cover opacity-40 mix-blend-overlay"
-        />
-        <div className="absolute inset-0 bg-[#2D3748]/80 mix-blend-multiply" />
-      </div>
-
-      {/* Background colored blobs */}
-      <div className="absolute top-10 left-10 w-64 h-64 bg-[#D93838] rounded-full blur-[80px] opacity-40 z-0" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#F2C94C] rounded-full blur-[100px] opacity-30 z-0" />
-
-      <div className="max-w-6xl mx-auto text-center relative z-10">
-        <div className="inline-block s4-box bg-[#F2C94C] text-brand-black px-4 py-2 rounded-full font-bold uppercase tracking-widest text-sm mb-8 border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] transform -rotate-3">
-          Roasted, Not Fried!
+      <div className="max-w-7xl mx-auto">
+        {/* Header Area */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
+          <div className="flex-1">
+            <div className="inline-block bg-brand-black text-white px-4 py-2 rounded-full font-bold uppercase tracking-widest text-sm mb-4 border-2 border-brand-black shadow-[4px_4px_0_rgba(0,0,0,0.2)]">
+              Crafted in Mithila
+            </div>
+            <h2 className="font-display text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">
+              The Crunch<br/>
+              <span className="text-[#D93838]">You Can Hear.</span>
+            </h2>
+          </div>
+          <div className="md:w-1/3">
+            <p className="font-body font-bold text-lg text-gray-600 leading-relaxed border-l-4 border-[#F2C94C] pl-6">
+              We ditched the deep fryer and perfected the art of the slow roast. The result? A snack that is impossibly light, outrageously crunchy, and deeply satisfying.
+            </p>
+          </div>
         </div>
-        
-        <h2 className="s4-box font-display text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter mb-8 uppercase drop-shadow-[5px_5px_0_rgba(0,0,0,1)] leading-tight">
-          The Crunch <br/> You Can Hear.
-        </h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-10 mt-12">
-          <div className="s4-box bg-white text-brand-black p-8 rounded-3xl border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] flex flex-col items-center transform rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all">
-            <span className="text-6xl mb-4">🌾</span>
-            <h3 className="font-display font-black text-2xl uppercase mb-3">Pond to Pack</h3>
-            <p className="font-body font-bold text-gray-600 text-base text-center">Sourced directly from the lotus ponds of Bihar.</p>
-          </div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
           
-          <div className="s4-box bg-[#6FCF97] text-brand-black p-8 rounded-3xl border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] flex flex-col items-center transform -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all">
-            <span className="text-6xl mb-4">🔥</span>
-            <h3 className="font-display font-black text-2xl uppercase mb-3">Slow Roasted</h3>
-            <p className="font-body font-bold text-gray-800 text-base text-center">Never fried. Roasted to absolute crispy perfection.</p>
+          {/* Main Large Feature */}
+          <div className="bento-item md:col-span-2 md:row-span-2 relative rounded-[2rem] border-4 border-brand-black overflow-hidden shadow-[8px_8px_0_rgba(0,0,0,1)] bg-[#FFF9E6] group flex flex-col justify-end p-10 min-h-[400px]">
+            <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="https://images.unsplash.com/photo-1615486171448-4fd1ab6c9682?q=80&w=2000&auto=format&fit=crop" 
+                alt="Slow Roasted"
+                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            </div>
+            <div className="relative z-10">
+              <span className="inline-block bg-white text-brand-black px-4 py-2 rounded-full font-black uppercase tracking-widest text-xs mb-4">
+                Slow Roasted
+              </span>
+              <h3 className="font-display font-black text-4xl md:text-5xl uppercase text-white mb-2 leading-none">
+                Never Fried.<br/>Ever.
+              </h3>
+              <p className="font-body font-bold text-white/90 text-lg max-w-md">
+                Cooked slowly in small batches to draw out moisture and lock in the ultimate crispy texture.
+              </p>
+            </div>
           </div>
-          
-          <div className="s4-box bg-[#D93838] text-white p-8 rounded-3xl border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] flex flex-col items-center transform rotate-3 hover:rotate-0 hover:-translate-y-2 transition-all">
-            <span className="text-6xl mb-4">🧂</span>
-            <h3 className="font-display font-black text-2xl uppercase mb-3">Flavored Right</h3>
-            <p className="font-body font-bold text-white/90 text-base text-center">Coated with bold, natural spices that hit the spot.</p>
+
+          {/* Small Feature 1 */}
+          <div className="bento-item relative rounded-[2rem] border-4 border-brand-black overflow-hidden shadow-[8px_8px_0_rgba(0,0,0,1)] bg-[#6FCF97] p-8 flex flex-col justify-center group hover:bg-[#5EBE86] transition-colors">
+            <h3 className="font-display font-black text-3xl uppercase text-brand-black mb-3">
+              Pond to<br/>Pack
+            </h3>
+            <p className="font-body font-bold text-brand-black/80 text-sm">
+              Sourced directly from the lotus ponds of Bihar, ensuring maximum freshness and fair wages.
+            </p>
+            {/* Geometric accent */}
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-white rounded-full opacity-20 group-hover:scale-150 transition-transform duration-500" />
           </div>
+
+          {/* Small Feature 2 */}
+          <div className="bento-item relative rounded-[2rem] border-4 border-brand-black overflow-hidden shadow-[8px_8px_0_rgba(0,0,0,1)] bg-[#2D3748] p-8 flex flex-col items-center justify-center group">
+            <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600')] bg-cover bg-center" />
+            <div className="relative z-10 text-center">
+              <h3 className="font-display font-black text-4xl uppercase text-[#F2C94C] mb-2 drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">
+                Bold Flavor
+              </h3>
+              <p className="font-body font-bold text-white/80 text-sm">
+                Coated in natural, authentic spices that hit the spot perfectly.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

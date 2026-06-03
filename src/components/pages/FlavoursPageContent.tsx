@@ -124,10 +124,15 @@ export default function FlavoursPageContent() {
     });
 
     gsap.from(".flavor-card", {
-      scale: 0.9,
+      scrollTrigger: {
+        trigger: ".flavor-grid",
+        start: "top 90%",
+      },
+      scale: 0.8,
+      y: 20,
       opacity: 0,
       stagger: 0.05,
-      duration: 0.4,
+      duration: 0.5,
       ease: "back.out(1.5)",
     });
   }, [filter]);
@@ -145,7 +150,7 @@ export default function FlavoursPageContent() {
   const activeFlavor = flavors.find(f => f.id === activeId) || flavors[0];
 
   return (
-    <main className="w-full min-h-screen bg-brand-white pt-24 pb-32">
+    <main className="w-full min-h-screen bg-brand-white pt-36 md:pt-48 pb-40">
       
       {/* ── Filter Bar ── */}
       <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -240,12 +245,11 @@ export default function FlavoursPageContent() {
         </div>
       </section>
 
-      {/* ── Flavor Selector Grid ── */}
-      <section className="max-w-7xl mx-auto px-6">
+      <section className="max-w-7xl mx-auto px-6 relative z-10 flavor-grid">
         <h3 className="font-display font-black text-2xl uppercase tracking-tighter mb-6 text-brand-black">
           Explore {filter === "All" ? "All" : filter} Flavors
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pb-20">
           {filteredFlavors.map((f) => (
             <div key={f.id} className="flavor-card">
               <button
@@ -265,7 +269,7 @@ export default function FlavoursPageContent() {
                   <div className="absolute top-0 left-0 w-full h-2" style={{ backgroundColor: f.color }} />
                 )}
 
-                <div className="relative w-16 h-20 mt-4 group-hover:scale-110 transition-transform">
+                <div className="relative w-24 h-32 md:w-32 md:h-40 mt-4 group-hover:scale-110 transition-transform">
                   <Image src={f.image} alt={f.name} fill className="object-contain drop-shadow-md" />
                 </div>
                 <span className="font-display font-black text-xs uppercase text-center leading-tight mt-auto text-brand-black">
