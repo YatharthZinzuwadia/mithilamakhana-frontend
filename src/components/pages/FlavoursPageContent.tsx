@@ -115,26 +115,36 @@ export default function FlavoursPageContent() {
   }, [filter, filteredFlavors, activeId]);
 
   useEffect(() => {
-    gsap.from(".flavor-filter", {
-      y: 20,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.5,
-      ease: "power2.out",
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".flavor-filter", 
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "power2.out",
+        }
+      );
+
+      gsap.fromTo(".flavor-card", 
+        { scale: 0.8, y: 20, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: ".flavor-grid",
+            start: "top 95%",
+          },
+          scale: 1,
+          y: 0,
+          opacity: 1,
+          stagger: 0.05,
+          duration: 0.5,
+          ease: "back.out(1.5)",
+        }
+      );
     });
 
-    gsap.from(".flavor-card", {
-      scrollTrigger: {
-        trigger: ".flavor-grid",
-        start: "top 90%",
-      },
-      scale: 0.8,
-      y: 20,
-      opacity: 0,
-      stagger: 0.05,
-      duration: 0.5,
-      ease: "back.out(1.5)",
-    });
+    return () => ctx.revert();
   }, [filter]);
 
   useEffect(() => {
