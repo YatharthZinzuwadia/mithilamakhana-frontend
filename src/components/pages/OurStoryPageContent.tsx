@@ -90,27 +90,27 @@ export default function OurStoryPageContent() {
   return (
     <main ref={pageRef} className="w-full min-h-screen bg-brand-white pb-40 md:pb-32">
       {/* Hero */}
-      <section className="relative py-20 pt-32 text-center px-6 bg-brand-black text-white border-b-8 border-brand-black overflow-hidden">
+      <section className="relative py-16 pt-28 md:pt-36 text-center px-4 sm:px-6 bg-brand-black text-white border-b-8 border-brand-black overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-        <h1 className="story-hero relative z-10 font-display text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(232,180,48,1)] text-white leading-tight">
+        <h1 className="story-hero relative z-10 font-display text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(232,180,48,1)] text-white leading-tight">
           Our Story
         </h1>
-        <p className="story-hero relative z-10 font-body text-xl md:text-2xl font-bold mt-6 max-w-2xl mx-auto text-brand-white/80">
+        <p className="story-hero relative z-10 font-body text-base sm:text-xl md:text-2xl font-bold mt-4 sm:mt-6 max-w-2xl mx-auto text-white/80">
           A snack 2,500 years in the making.
         </p>
-        <div className="story-hero relative z-10 mt-8 inline-block bg-[#F2C94C] text-brand-black px-8 py-4 rounded-2xl border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,0.3)] font-black text-xl uppercase tracking-widest transform -rotate-1">
+        <div className="story-hero relative z-10 mt-6 sm:mt-8 inline-block bg-[#F2C94C] text-brand-black px-5 sm:px-8 py-3 sm:py-4 rounded-2xl border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,0.3)] font-black text-base sm:text-xl uppercase tracking-widest transform -rotate-1">
           From Mithila to the World
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <blockquote className="font-display text-2xl md:text-4xl font-black leading-tight tracking-tight">
-          "We didn't invent Makhana.{" "}
-          <span className="text-[#D93838]">We just refused to let the world miss out on it.</span>"
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
+        <blockquote className="font-display text-xl sm:text-2xl md:text-4xl font-black leading-tight tracking-tight text-brand-black">
+          &ldquo;We didn&apos;t invent Makhana.{" "}
+          <span className="text-[#D93838]">We just refused to let the world miss out on it.</span>&rdquo;
         </blockquote>
-        <p className="mt-8 font-body text-lg font-bold text-brand-black/60">
-        — Mithila Mantra Makhanas Founding Team, Darbhanga, Bihar
+        <p className="mt-6 sm:mt-8 font-body text-base sm:text-lg font-bold text-brand-black/60">
+          — Mithila Mantra Makhanas Founding Team, Darbhanga, Bihar
         </p>
       </section>
 
@@ -127,7 +127,7 @@ export default function OurStoryPageContent() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-radial-gradient(circle at 0 0, transparent 0, #000 12px), repeating-linear-gradient(#000, #000)', backgroundSize: '24px 24px' }} />
 
         <div className="max-w-6xl mx-auto relative z-10">
-          <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-16">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-12 sm:mb-16 text-brand-black">
             The 2,500 Year Journey
           </h2>
           <div className="relative">
@@ -138,12 +138,12 @@ export default function OurStoryPageContent() {
               {timeline.map((t, i) => (
                 <div
                   key={t.year}
-                  className={`timeline-item flex flex-col md:flex-row gap-8 md:gap-12 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  className={`timeline-item flex flex-col md:flex-row gap-6 md:gap-12 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
                   {/* Text Content */}
-                  <div className={`w-full md:w-[45%] flex ${i % 2 === 0 ? "justify-end" : "justify-start"}`}>
+                  <div className={`w-full md:w-[45%] flex ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
                     <div
-                      className="inline-block bg-white border-4 border-brand-black rounded-3xl p-8 shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform duration-300 max-w-lg"
+                      className="bg-white border-4 border-brand-black rounded-3xl p-5 sm:p-8 shadow-[10px_10px_0_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform duration-300 w-full max-w-lg"
                       style={{ transform: `rotate(${i % 2 === 0 ? -1 : 1}deg)` }}
                     >
                       <span
@@ -187,12 +187,12 @@ export default function OurStoryPageContent() {
       </section>
 
       {/* Values */}
-      <section className="values-section bg-brand-black py-24 px-6 border-y-8 border-brand-black">
+      <section className="values-section bg-brand-black py-16 sm:py-24 px-4 sm:px-6 border-y-8 border-brand-black">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter text-center text-[#F2C94C] mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter text-center text-[#F2C94C] mb-8 sm:mb-10">
             What We Stand For
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {values.map((v, i) => (
               <div
                 key={v.title}

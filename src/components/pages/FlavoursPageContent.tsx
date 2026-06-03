@@ -163,18 +163,18 @@ export default function FlavoursPageContent() {
     <main className="w-full min-h-screen bg-brand-white pt-36 md:pt-48 pb-40">
       
       {/* ── Filter Bar ── */}
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <h1 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tighter text-brand-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12 flex flex-col items-center gap-4 sm:gap-6">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-brand-black text-center">
           Pick Your Crunch
         </h1>
         
-        <div className="flex flex-wrap justify-center gap-3 bg-white p-2 rounded-full border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 bg-white p-1.5 sm:p-2 rounded-full border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)]">
           {(["All", "Mild", "Medium", "Spicy"] as FilterType[]).map(f => (
             <button
               key={f}
               onClick={() => setFilter(f)}
               className={clsx(
-                "flavor-filter px-6 py-2 rounded-full font-black uppercase text-xs tracking-widest transition-all",
+                "flavor-filter px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-black uppercase text-xs tracking-widest transition-all",
                 filter === f 
                   ? "bg-brand-black text-white" 
                   : "bg-transparent text-brand-black hover:bg-gray-100"
@@ -199,12 +199,12 @@ export default function FlavoursPageContent() {
           <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'radial-gradient(#000 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
           {/* Left: Product Image & Badges */}
-          <div className="relative w-full lg:w-1/2 flex flex-col items-center justify-center p-10 lg:border-r-8 lg:border-brand-black bg-white/10 backdrop-blur-sm">
-            <span className="bg-brand-black text-white px-6 py-2 rounded-full font-black uppercase tracking-widest text-sm border-2 border-white shadow-[4px_4px_0_rgba(0,0,0,1)] mb-8 transform -rotate-2">
+          <div className="relative w-full lg:w-1/2 flex flex-col items-center justify-center p-6 sm:p-10 lg:border-r-8 lg:border-brand-black bg-white/10 backdrop-blur-sm">
+            <span className="bg-brand-black text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-black uppercase tracking-widest text-xs sm:text-sm border-2 border-white shadow-[4px_4px_0_rgba(0,0,0,1)] mb-4 sm:mb-8 transform -rotate-2">
               {activeFlavor.heat} Heat
             </span>
             
-            <div className="relative w-64 h-80 md:w-80 md:h-[400px] hover:scale-105 hover:rotate-3 transition-transform duration-500 z-10 drop-shadow-[20px_20px_0_rgba(0,0,0,0.4)]">
+            <div className="relative w-44 h-56 sm:w-64 sm:h-80 md:w-80 md:h-[400px] hover:scale-105 hover:rotate-3 transition-transform duration-500 z-10 drop-shadow-[20px_20px_0_rgba(0,0,0,0.4)]">
               <Image
                 src={activeFlavor.image}
                 alt={activeFlavor.name}
@@ -215,39 +215,40 @@ export default function FlavoursPageContent() {
           </div>
 
           {/* Right: Info Panel */}
-          <div className="w-full lg:w-1/2 bg-white p-8 md:p-12 flex flex-col justify-center">
+          <div className="w-full lg:w-1/2 bg-white p-5 sm:p-8 md:p-12 flex flex-col justify-center">
             <span 
-              className="inline-block self-start font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full border-2 border-brand-black mb-4"
+              className="inline-block self-start font-black text-xs uppercase tracking-widest px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 border-brand-black mb-3 sm:mb-4"
               style={{ backgroundColor: activeFlavor.color, color: activeFlavor.color === '#2D3748' || activeFlavor.color === '#D93838' ? 'white' : 'black' }}
             >
               {activeFlavor.badge}
             </span>
             
-            <h2 className="font-display text-5xl md:text-7xl font-black uppercase tracking-tighter mb-2 text-brand-black leading-none">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter mb-1 sm:mb-2 text-brand-black leading-none">
               {activeFlavor.name}
             </h2>
-            <p className="font-display text-xl md:text-2xl font-bold text-gray-500 uppercase tracking-tight mb-8">
+            <p className="font-display text-sm sm:text-xl md:text-2xl font-bold text-gray-500 uppercase tracking-tight mb-4 sm:mb-8">
               {activeFlavor.tagline}
             </p>
 
-            <div className="bg-gray-50 border-4 border-brand-black rounded-2xl p-6 shadow-[6px_6px_0_rgba(0,0,0,1)] mb-8">
-              <p className="font-body text-base md:text-lg font-bold text-brand-black/80 leading-relaxed">
+            <div className="bg-gray-50 border-4 border-brand-black rounded-2xl p-3 sm:p-6 shadow-[6px_6px_0_rgba(0,0,0,1)] mb-4 sm:mb-8">
+              <p className="font-body text-sm sm:text-base md:text-lg font-bold text-brand-black/80 leading-relaxed">
                 {activeFlavor.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-4 gap-3 mb-8">
+            {/* Nutrition: 2x2 on mobile, 4 cols on larger screens */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-8">
               {Object.entries(activeFlavor.nutrition).map(([key, val]) => (
-                <div key={key} className="bg-white border-2 border-brand-black rounded-xl p-3 text-center shadow-[4px_4px_0_rgba(0,0,0,1)] flex flex-col justify-center">
-                  <div className="font-display font-black text-lg md:text-xl" style={{ color: activeFlavor.color }}>{val}</div>
-                  <div className="font-bold uppercase text-[10px] text-brand-black/60 mt-1">{key}</div>
+                <div key={key} className="bg-white border-2 border-brand-black rounded-xl p-2 sm:p-3 text-center shadow-[4px_4px_0_rgba(0,0,0,1)] flex flex-col justify-center">
+                  <div className="font-display font-black text-sm sm:text-lg md:text-xl truncate" style={{ color: activeFlavor.color }}>{val}</div>
+                  <div className="font-bold uppercase text-[9px] sm:text-[10px] text-brand-black/60 mt-1">{key}</div>
                 </div>
               ))}
             </div>
 
             <a
               href="mailto:sales@mithilamantra.com?subject=Bulk Order Enquiry"
-              className="inline-flex items-center justify-center gap-3 bg-brand-black text-white font-black uppercase tracking-widest text-lg px-8 py-5 rounded-2xl border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[12px_12px_0_rgba(0,0,0,1)] transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-brand-black text-white font-black uppercase tracking-widest text-sm sm:text-lg px-5 sm:px-8 py-3 sm:py-5 rounded-2xl border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,1)] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[12px_12px_0_rgba(0,0,0,1)] transition-all duration-200"
             >
               Order This Flavour →
             </a>
@@ -255,8 +256,8 @@ export default function FlavoursPageContent() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 relative z-10 flavor-grid">
-        <h3 className="font-display font-black text-2xl uppercase tracking-tighter mb-6 text-brand-black">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flavor-grid">
+        <h3 className="font-display font-black text-xl sm:text-2xl uppercase tracking-tighter mb-4 sm:mb-6 text-brand-black">
           Explore {filter === "All" ? "All" : filter} Flavors
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pb-20">

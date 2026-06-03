@@ -42,19 +42,19 @@ export default function S6_TheMoment() {
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#000 3px, transparent 3px)', backgroundSize: '40px 40px' }} />
 
       <div className="relative z-10 flex flex-col items-center text-center max-w-5xl px-6">
-        <h2 className="s6-pop font-display text-5xl md:text-7xl font-black uppercase tracking-tighter text-white drop-shadow-[6px_6px_0_rgba(0,0,0,1)] mb-8 transform -rotate-2 leading-tight">
+        <h2 className="s6-pop font-display text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-white drop-shadow-[6px_6px_0_rgba(0,0,0,1)] mb-8 transform -rotate-2 leading-tight">
           THE <br/> TRANSFORMATION
         </h2>
 
-        <div className="s6-pop bg-brand-gold p-6 rounded-3xl border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] transform rotate-2 max-w-2xl">
-          <p className="font-body text-lg md:text-xl font-bold leading-relaxed">
+        <div className="s6-pop bg-brand-gold p-4 sm:p-6 rounded-3xl border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] transform rotate-2 w-full max-w-2xl">
+          <p className="font-body text-base sm:text-lg md:text-xl font-bold leading-relaxed">
             From the deep ponds of Bihar to your pantry.<br/><br/>
-            <span className="bg-brand-black text-white px-2 py-1 uppercase tracking-widest text-base">The ultimate healthy crunch.</span>
+            <span className="bg-brand-black text-white px-2 py-1 uppercase tracking-widest text-xs sm:text-base">The ultimate healthy crunch.</span>
           </p>
         </div>
 
-        <div className="s6-pop mt-12 relative w-48 h-48 bg-white rounded-full border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] flex items-center justify-center animate-[spin_20s_linear_infinite]">
-          <span className="font-display font-black text-2xl uppercase text-center text-[#D93838] leading-tight">
+        <div className="s6-pop mt-12 relative w-36 h-36 sm:w-48 sm:h-48 bg-white rounded-full border-4 border-brand-black shadow-[10px_10px_0_rgba(0,0,0,1)] flex items-center justify-center animate-[spin_20s_linear_infinite]">
+          <span className="font-display font-black text-xl sm:text-2xl uppercase text-center text-[#D93838] leading-tight">
             Super<br/>Food!
           </span>
         </div>

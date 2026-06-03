@@ -80,7 +80,7 @@ export default function S11_WhyMakhanaWins() {
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#000 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <h2 className="s11-card inline-block font-display text-4xl md:text-6xl font-black mb-10 bg-white px-6 py-3 border-4 border-brand-black rounded-3xl shadow-[8px_8px_0_rgba(0,0,0,1)] transform -rotate-1 uppercase tracking-tighter leading-tight">
+        <h2 className="s11-card inline-block font-display text-2xl sm:text-4xl md:text-6xl font-black mb-10 bg-white px-4 sm:px-6 py-3 border-4 border-brand-black rounded-3xl shadow-[8px_8px_0_rgba(0,0,0,1)] transform -rotate-1 uppercase tracking-tighter leading-tight max-w-full">
           Where Snacking Meets Wellness
         </h2>
         
@@ -102,19 +102,19 @@ export default function S11_WhyMakhanaWins() {
                 <span className="text-[#D93838]">Makhana Wins</span>
               </div>
               
-              <div className="space-y-3 font-body text-sm font-bold">
-                <div className="flex items-center gap-3">
-                  <span className="w-24 text-right">Makhana</span>
-                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+              <div className="space-y-3 font-body text-xs sm:text-sm font-bold">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="w-16 sm:w-24 text-right text-xs sm:text-sm flex-shrink-0">Makhana</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-5 sm:h-6 border-2 border-brand-black overflow-hidden relative">
                     <div className="bg-[#6FCF97] h-full" style={{ width: '90%' }}></div>
-                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand-black text-xs font-black">9.7g</span>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand-black text-[10px] sm:text-xs font-black">9.7g</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 opacity-60">
-                  <span className="w-24 text-right">Potato Chips</span>
-                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+                <div className="flex items-center gap-2 sm:gap-3 opacity-60">
+                  <span className="w-16 sm:w-24 text-right text-xs sm:text-sm flex-shrink-0">Chips</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-5 sm:h-6 border-2 border-brand-black overflow-hidden relative">
                     <div className="bg-gray-400 h-full" style={{ width: '60%' }}></div>
-                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-xs font-black">6.5g</span>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-[10px] sm:text-xs font-black">6.5g</span>
                   </div>
                 </div>
               </div>
@@ -127,19 +127,19 @@ export default function S11_WhyMakhanaWins() {
                 <span className="text-[#6FCF97]">Less is More</span>
               </div>
               
-              <div className="space-y-3 font-body text-sm font-bold">
-                <div className="flex items-center gap-3">
-                  <span className="w-24 text-right">Makhana</span>
-                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+              <div className="space-y-3 font-body text-xs sm:text-sm font-bold">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="w-16 sm:w-24 text-right text-xs sm:text-sm flex-shrink-0">Makhana</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-5 sm:h-6 border-2 border-brand-black overflow-hidden relative">
                     <div className="bg-[#F2C94C] h-full" style={{ width: '65%' }}></div>
-                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand-black text-xs font-black">347 kcal</span>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand-black text-[10px] sm:text-xs font-black">347 kcal</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 opacity-60">
-                  <span className="w-24 text-right">Potato Chips</span>
-                  <div className="flex-1 bg-gray-200 rounded-full h-6 border-2 border-brand-black overflow-hidden relative">
+                <div className="flex items-center gap-2 sm:gap-3 opacity-60">
+                  <span className="w-16 sm:w-24 text-right text-xs sm:text-sm flex-shrink-0">Chips</span>
+                  <div className="flex-1 bg-gray-200 rounded-full h-5 sm:h-6 border-2 border-brand-black overflow-hidden relative">
                     <div className="bg-[#D93838] h-full" style={{ width: '100%' }}></div>
-                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-xs font-black">536 kcal</span>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-[10px] sm:text-xs font-black">536 kcal</span>
                   </div>
                 </div>
               </div>

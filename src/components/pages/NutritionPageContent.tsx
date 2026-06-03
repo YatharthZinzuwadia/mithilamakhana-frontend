@@ -113,26 +113,25 @@ export default function NutritionPageContent() {
   return (
     <main ref={pageRef} className="w-full min-h-screen bg-brand-white pb-40 md:pb-32">
       {/* Hero */}
-      <section className="py-20 pt-32 text-center px-6 border-b-8 border-brand-black bg-[#6FCF97]">
-        <h1 className="nutr-hero font-display text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(0,0,0,1)] text-white leading-tight">
+      <section className="py-16 pt-32 md:pt-40 text-center px-4 sm:px-6 border-b-8 border-brand-black bg-[#6FCF97]">
+        <h1 className="nutr-hero font-display text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(0,0,0,1)] text-brand-black leading-tight">
           Our Quality Promise
         </h1>
-        <p className="nutr-hero font-body text-xl md:text-2xl font-bold mt-4 max-w-2xl mx-auto text-brand-black bg-white px-6 py-3 rounded-2xl border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] inline-block transform -rotate-1">
+        <p className="nutr-hero font-body text-base sm:text-xl md:text-2xl font-bold mt-4 max-w-2xl mx-auto text-brand-black bg-white px-4 sm:px-6 py-3 rounded-2xl border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] inline-block transform -rotate-1">
           Zero compromise on purity, taste, and your health.
         </p>
       </section>
 
-      {/* Certifications */}
-      <section className="bg-[#F2C94C] py-12 px-6 border-b-8 border-brand-black overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <h2 className="font-display font-black text-3xl uppercase tracking-tighter md:w-1/3 text-center md:text-left">
+      <section className="bg-[#F2C94C] py-10 px-4 sm:px-6 border-b-8 border-brand-black overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <h2 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tighter md:w-1/3 text-center md:text-left text-brand-black">
             Certified Excellence
           </h2>
-          <div className="flex-1 flex flex-wrap justify-center md:justify-end gap-6">
-            {["100% Organic", "Non-GMO Verified", "Gluten-Free Certified", "Vegan", "HACCP Certified"].map((cert, i) => (
+          <div className="flex-1 flex flex-wrap justify-center md:justify-end gap-3 sm:gap-6">
+            {["100% Organic", "Non-GMO", "Gluten-Free", "Vegan", "HACCP Certified"].map((cert, i) => (
               <div 
                 key={cert} 
-                className="bg-white px-6 py-3 border-4 border-brand-black rounded-full shadow-[4px_4px_0_rgba(0,0,0,1)] font-black text-sm uppercase tracking-widest hover:-translate-y-1 transition-transform"
+                className="bg-white px-3 sm:px-6 py-2 sm:py-3 border-4 border-brand-black rounded-full shadow-[4px_4px_0_rgba(0,0,0,1)] font-black text-xs sm:text-sm uppercase tracking-widest hover:-translate-y-1 transition-transform text-brand-black"
                 style={{ transform: `rotate(${i % 2 === 0 ? 2 : -2}deg)` }}
               >
                 {cert}
@@ -143,11 +142,11 @@ export default function NutritionPageContent() {
       </section>
 
       {/* Comparison Table */}
-      <section className="max-w-5xl mx-auto px-6 pt-20 pb-10">
-        <h2 className="font-display text-3xl md:text-4xl font-black uppercase tracking-tighter text-center mb-3">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-16 pb-10">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter text-center mb-3 text-brand-black">
           Makhana vs. The Competition
         </h2>
-        <p className="text-center font-bold text-base text-brand-black/70 mb-10">Per 100g serving</p>
+        <p className="text-center font-bold text-sm text-brand-black/70 mb-10">Per 100g serving</p>
 
         <div className="flex flex-col gap-8">
           {nutrients.map((n) => {
@@ -157,19 +156,19 @@ export default function NutritionPageContent() {
             const pPct = (n.popcorn / maxVal) * 100;
 
             return (
-              <div key={n.name} className="bg-white border-4 border-brand-black rounded-2xl p-6 shadow-[6px_6px_0_rgba(0,0,0,1)]">
+              <div key={n.name} className="bg-white border-4 border-brand-black rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0_rgba(0,0,0,1)]">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-display font-black text-2xl uppercase">{n.name}</h3>
-                  <span className="font-bold text-sm text-brand-black/60 uppercase tracking-widest">{n.unit}</span>
+                  <h3 className="font-display font-black text-xl sm:text-2xl uppercase text-brand-black">{n.name}</h3>
+                  <span className="font-bold text-xs sm:text-sm text-brand-black/60 uppercase tracking-widest">{n.unit}</span>
                 </div>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2 sm:gap-3">
                   {/* Makhana */}
-                  <div className="flex items-center gap-4">
-                    <span className="w-28 font-black text-sm uppercase text-right flex-shrink-0">Mithila Mantra</span>
-                    <div className="flex-1 bg-gray-100 rounded-full h-8 border-2 border-brand-black overflow-hidden relative">
+                  <div className="flex items-center gap-2 sm:gap-4">
+                    <span className="w-16 sm:w-28 font-black text-xs sm:text-sm uppercase text-right flex-shrink-0">Ours</span>
+                    <div className="flex-1 bg-gray-100 rounded-full h-6 sm:h-8 border-2 border-brand-black overflow-hidden relative">
                       <div
-                        className="bar-fill h-full rounded-full flex items-center justify-end pr-3 font-black text-sm"
+                        className="bar-fill h-full rounded-full flex items-center justify-end pr-2 sm:pr-3 font-black text-xs sm:text-sm"
                         data-width={`${mPct}%`}
                         style={{ width: `${mPct}%`, backgroundColor: n.color, color: n.color === '#D93838' ? 'white' : 'black' }}
                       >
@@ -177,18 +176,18 @@ export default function NutritionPageContent() {
                       </div>
                     </div>
                     {n.lowerIsBetter && mPct < 50 && (
-                      <span className="text-[#27AE60] font-black text-xs uppercase whitespace-nowrap">✓ Best</span>
+                      <span className="text-[#27AE60] font-black text-[10px] sm:text-xs uppercase whitespace-nowrap">✓ Best</span>
                     )}
                     {!n.lowerIsBetter && mPct === 100 && (
-                      <span className="text-[#27AE60] font-black text-xs uppercase whitespace-nowrap">✓ Best</span>
+                      <span className="text-[#27AE60] font-black text-[10px] sm:text-xs uppercase whitespace-nowrap">✓ Best</span>
                     )}
                   </div>
                   {/* Chips */}
-                  <div className="flex items-center gap-4 opacity-80">
-                    <span className="w-28 font-bold text-sm uppercase text-right flex-shrink-0 text-brand-black/60">Chips</span>
-                    <div className="flex-1 bg-gray-100 rounded-full h-8 border-2 border-brand-black overflow-hidden">
+                  <div className="flex items-center gap-2 sm:gap-4 opacity-80">
+                    <span className="w-16 sm:w-28 font-bold text-xs sm:text-sm uppercase text-right flex-shrink-0 text-brand-black/60">Chips</span>
+                    <div className="flex-1 bg-gray-100 rounded-full h-6 sm:h-8 border-2 border-brand-black overflow-hidden">
                       <div
-                        className="bar-fill h-full rounded-full flex items-center justify-end pr-3 font-bold text-sm bg-[#E8B430]"
+                        className="bar-fill h-full rounded-full flex items-center justify-end pr-2 sm:pr-3 font-bold text-xs sm:text-sm bg-[#E8B430]"
                         data-width={`${cPct}%`}
                         style={{ width: `${cPct}%` }}
                       >
@@ -197,11 +196,11 @@ export default function NutritionPageContent() {
                     </div>
                   </div>
                   {/* Popcorn */}
-                  <div className="flex items-center gap-4 opacity-80">
-                    <span className="w-28 font-bold text-sm uppercase text-right flex-shrink-0 text-brand-black/60">Popcorn</span>
-                    <div className="flex-1 bg-gray-100 rounded-full h-8 border-2 border-brand-black overflow-hidden">
+                  <div className="flex items-center gap-2 sm:gap-4 opacity-80">
+                    <span className="w-16 sm:w-28 font-bold text-xs sm:text-sm uppercase text-right flex-shrink-0 text-brand-black/60">Popcorn</span>
+                    <div className="flex-1 bg-gray-100 rounded-full h-6 sm:h-8 border-2 border-brand-black overflow-hidden">
                       <div
-                        className="bar-fill h-full rounded-full flex items-center justify-end pr-3 font-bold text-sm bg-[#6FCF97]"
+                        className="bar-fill h-full rounded-full flex items-center justify-end pr-2 sm:pr-3 font-bold text-xs sm:text-sm bg-[#6FCF97]"
                         data-width={`${pPct}%`}
                         style={{ width: `${pPct}%` }}
                       >
@@ -216,9 +215,8 @@ export default function NutritionPageContent() {
         </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section className="max-w-7xl mx-auto px-6 pt-10 pb-20">
-        <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-20">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-10 text-brand-black">
           8 Reasons to Switch Today
         </h2>
         <div className="benefits-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

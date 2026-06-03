@@ -53,33 +53,33 @@ export default function S5_MithilaStory() {
             </p>
           </div>
 
-          <div className="s5-item grid grid-cols-2 gap-4">
-            <div className="flex items-center gap-3 bg-[#6FCF97]/20 p-3 rounded-xl border-2 border-brand-black">
-              <div className="w-10 h-10 bg-[#6FCF97] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0">
-                <span className="font-black text-lg">✓</span>
+          <div className="s5-item grid grid-cols-2 gap-3">
+            <div className="flex items-center gap-2 bg-[#6FCF97]/20 p-2 sm:p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#6FCF97] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0">
+                <span className="font-black text-sm sm:text-lg">✓</span>
               </div>
-              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">Authentic<br/>Origin</p>
+              <p className="font-display font-black text-xs sm:text-sm uppercase tracking-wider leading-tight">Authentic<br/>Origin</p>
             </div>
             
-            <div className="flex items-center gap-3 bg-[#F2C94C]/20 p-3 rounded-xl border-2 border-brand-black">
-              <div className="w-10 h-10 bg-[#F2C94C] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0">
-                <span className="font-black text-lg">🌱</span>
+            <div className="flex items-center gap-2 sm:gap-3 bg-[#F2C94C]/20 p-2 sm:p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#F2C94C] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0">
+                <span className="font-black text-sm sm:text-lg">🌱</span>
               </div>
-              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">100%<br/>Natural</p>
+              <p className="font-display font-black text-xs sm:text-sm uppercase tracking-wider leading-tight">100%<br/>Natural</p>
             </div>
             
-            <div className="flex items-center gap-3 bg-[#D93838]/20 p-3 rounded-xl border-2 border-brand-black">
-              <div className="w-10 h-10 bg-[#D93838] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0 text-white">
-                <span className="font-black text-lg">🌾</span>
+            <div className="flex items-center gap-2 sm:gap-3 bg-[#D93838]/20 p-2 sm:p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#D93838] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0 text-white">
+                <span className="font-black text-sm sm:text-lg">🌾</span>
               </div>
-              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">Gluten<br/>Free</p>
+              <p className="font-display font-black text-xs sm:text-sm uppercase tracking-wider leading-tight">Gluten<br/>Free</p>
             </div>
             
-            <div className="flex items-center gap-3 bg-[#2D3748]/10 p-3 rounded-xl border-2 border-brand-black">
-              <div className="w-10 h-10 bg-[#2D3748] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0 text-white">
-                <span className="font-black text-lg">✅</span>
+            <div className="flex items-center gap-2 sm:gap-3 bg-[#2D3748]/10 p-2 sm:p-3 rounded-xl border-2 border-brand-black">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#2D3748] rounded-full border-2 border-brand-black flex items-center justify-center flex-shrink-0 text-white">
+                <span className="font-black text-sm sm:text-lg">✅</span>
               </div>
-              <p className="font-display font-black text-sm uppercase tracking-wider leading-tight">FSSAI<br/>Certified</p>
+              <p className="font-display font-black text-xs sm:text-sm uppercase tracking-wider leading-tight">FSSAI<br/>Certified</p>
             </div>
           </div>
         </div>
