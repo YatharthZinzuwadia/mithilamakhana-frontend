@@ -208,19 +208,19 @@ export default function OurStoryPageContent() {
       </section>
 
       {/* Team / Origin */}
-      <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <div className="bg-[#E8B430] border-4 border-brand-black rounded-3xl p-10 shadow-[12px_12px_0_rgba(0,0,0,1)] transform -rotate-1">
-          <h2 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
+        <div className="bg-[#E8B430] border-4 border-brand-black rounded-3xl p-5 sm:p-10 shadow-[8px_8px_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_rgba(0,0,0,1)] transform -rotate-1">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-brand-black">
             Where It All Happens
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-            <div className="bg-white p-6 rounded-2xl border-4 border-brand-black shadow-[4px_4px_0_rgba(0,0,0,1)]">
-              <h3 className="font-black uppercase tracking-widest text-sm mb-2 text-[#D93838]">Production HQ</h3>
-              <p className="font-bold text-lg">Shubhankarpur, Darbhanga<br/>Bihar – 846004, India</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-left">
+            <div className="bg-white p-4 sm:p-6 rounded-2xl border-4 border-brand-black shadow-[4px_4px_0_rgba(0,0,0,1)]">
+              <h3 className="font-black uppercase tracking-widest text-xs sm:text-sm mb-2 text-[#D93838]">Production HQ</h3>
+              <p className="font-bold text-sm sm:text-lg text-brand-black leading-relaxed">Shubhankarpur, Darbhanga<br/>Bihar – 846004, India</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl border-4 border-brand-black shadow-[4px_4px_0_rgba(0,0,0,1)]">
-              <h3 className="font-black uppercase tracking-widest text-sm mb-2 text-[#27AE60]">Office</h3>
-              <p className="font-bold text-lg">Amarsinh Colony, Baramati<br/>Pune, Maharashtra – 413115</p>
+            <div className="bg-white p-4 sm:p-6 rounded-2xl border-4 border-brand-black shadow-[4px_4px_0_rgba(0,0,0,1)]">
+              <h3 className="font-black uppercase tracking-widest text-xs sm:text-sm mb-2 text-[#27AE60]">Office</h3>
+              <p className="font-bold text-sm sm:text-lg text-brand-black leading-relaxed">Amarsinh Colony, Baramati<br/>Pune, Maharashtra – 413115</p>
             </div>
           </div>
         </div>
