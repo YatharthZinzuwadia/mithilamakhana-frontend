@@ -165,7 +165,7 @@ export default function NutritionPageContent() {
                 <div className="flex flex-col gap-2 sm:gap-3">
                   {/* Makhana */}
                   <div className="flex items-center gap-2 sm:gap-4">
-                    <span className="w-16 sm:w-28 font-black text-xs sm:text-sm uppercase text-right flex-shrink-0">Ours</span>
+                    <span className="w-16 sm:w-28 font-black text-xs sm:text-sm uppercase text-right flex-shrink-0 text-brand-black">Ours</span>
                     <div className="flex-1 bg-gray-100 rounded-full h-6 sm:h-8 border-2 border-brand-black overflow-hidden relative">
                       <div
                         className="bar-fill h-full rounded-full flex items-center justify-end pr-2 sm:pr-3 font-black text-xs sm:text-sm"

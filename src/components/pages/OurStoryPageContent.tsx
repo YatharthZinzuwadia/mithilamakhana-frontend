@@ -199,7 +199,7 @@ export default function OurStoryPageContent() {
                 className="value-card bg-white border-4 border-white rounded-2xl p-6 shadow-[6px_6px_0_rgba(255,255,255,0.3)] hover:-translate-y-2 transition-transform duration-200"
               >
                 <span className="text-4xl mb-4 block">{v.icon}</span>
-                <h3 className="font-display font-black text-lg uppercase tracking-tight mb-2">{v.title}</h3>
+                <h3 className="font-display font-black text-lg uppercase tracking-tight mb-2 text-brand-black">{v.title}</h3>
                 <p className="font-body font-bold text-brand-black/70 text-xs leading-relaxed">{v.text}</p>
               </div>
             ))}
