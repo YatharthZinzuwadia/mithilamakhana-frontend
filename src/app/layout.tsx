@@ -88,7 +88,8 @@ export default function RootLayout({
               name: "Mithila Mantra Makhanas",
               url: "https://mithilamantra.com",
               logo: "https://mithilamantra.com/images/product_pouch_raw.png",
-              description: "India's finest slow-roasted fox nuts, harvested from the lotus ponds of Bihar. High protein, gluten-free, vegan.",
+              description:
+                "India's finest slow-roasted fox nuts, harvested from the lotus ponds of Bihar. High protein, gluten-free, vegan.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Darbhanga",
@@ -99,16 +100,19 @@ export default function RootLayout({
           }}
         />
         {/* Placeholder for Google Analytics (User to add ID) */}
-        {/* <Script src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID" strategy="afterInteractive" /> */}
-        {/* <Script id="google-analytics" strategy="afterInteractive">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GE3JQTHSY4"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'YOUR-GA-ID');
+            gtag('config', 'G-GE3JQTHSY4');
           `}
-        </Script> */}
-        
+        </Script>
+
         <div className="noise-overlay" />
         <CustomCursor />
         <SmoothScroll>
