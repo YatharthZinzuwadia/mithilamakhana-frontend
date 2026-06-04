@@ -21,7 +21,7 @@ import Header from "@/components/layout/Header";
 import S14_ContactWaitlist from "@/components/sections/S14_ContactWaitlist";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mithilamantra.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://mithilamantra.com"),
   title: {
     default: "Mithila Mantra Makhanas | The Healthiest Crunch",
     template: "%s | Mithila Mantra Makhanas",

@@ -1,12 +1,66 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
+}
+
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { subscribeToWaitlist } from "@/app/actions";
+
+function WaitlistForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!executeRecaptcha) {
+      console.log("Execute recaptcha not yet available");
+      return;
+    }
+    setStatus("loading");
+    
+    try {
+      const token = await executeRecaptcha("subscribe_waitlist");
+      const formData = new FormData();
+      formData.append("email", email);
+      
+      const result = await subscribeToWaitlist(formData, token);
+      if (result.success) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+      <input 
+        type="email" 
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+        placeholder="Enter your email" 
+        className="bg-gray-100 border-2 border-brand-black p-3 rounded-xl outline-none w-full font-body placeholder:text-brand-black/50 text-brand-black font-bold focus:shadow-[4px_4px_0_rgba(0,0,0,1)] transition-shadow"
+      />
+      <button 
+        disabled={status === "loading" || status === "success"}
+        className="bg-brand-black text-white font-bold uppercase tracking-widest text-sm py-3 rounded-xl hover:bg-[#D93838] transition-colors border-2 border-brand-black disabled:opacity-70 disabled:cursor-not-allowed"
+      >
+        {status === "loading" ? "Subscribing..." : status === "success" ? "Subscribed!" : "Subscribe"}
+      </button>
+      {status === "error" && <p className="text-red-500 text-sm font-bold mt-1">Failed. Please try again.</p>}
+    </form>
+  );
 }
 
 export default function S14_ContactWaitlist() {
@@ -30,7 +84,11 @@ export default function S14_ContactWaitlist() {
     return () => ctx.revert();
   }, []);
 
+  // Use a dummy key during development if none is provided, to prevent crashes
+  const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+
   return (
+    <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
     <footer 
       ref={containerRef}
       className="relative w-full bg-[#E8B430] text-brand-black py-16 md:py-24 px-6 md:px-12 pb-28 md:pb-24 border-t-8 border-brand-black overflow-hidden"
@@ -46,16 +104,7 @@ export default function S14_ContactWaitlist() {
           <p className="font-body text-lg font-bold mb-6 text-brand-black/80">
             Be the first to know when new flavors drop.
           </p>
-          <div className="flex flex-col gap-2">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="bg-gray-100 border-2 border-brand-black p-3 rounded-xl outline-none w-full font-body placeholder:text-brand-black/50 text-brand-black font-bold focus:shadow-[4px_4px_0_rgba(0,0,0,1)] transition-shadow"
-            />
-            <button className="bg-brand-black text-white font-bold uppercase tracking-widest text-sm py-3 rounded-xl hover:bg-[#D93838] transition-colors border-2 border-brand-black">
-              Subscribe
-            </button>
-          </div>
+          <WaitlistForm />
         </div>
 
         <div className="contact-item bg-white p-6 border-4 border-brand-black rounded-3xl shadow-[8px_8px_0_rgba(0,0,0,1)] transform rotate-1">
@@ -127,5 +176,6 @@ export default function S14_ContactWaitlist() {
         </p>
       </div>
     </footer>
+    </GoogleReCaptchaProvider>
   );
 }
