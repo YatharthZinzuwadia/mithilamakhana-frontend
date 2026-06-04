@@ -7,10 +7,10 @@ import Image from "next/image";
 import { clsx } from "clsx";
 
 const CAROUSEL_IMAGES = [
-  "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?q=80&w=2070&auto=format&fit=crop", // Snacking
-  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2070&auto=format&fit=crop", // Lotus Pond
-  "https://images.unsplash.com/photo-1500937386664-56d1dfef4564?q=80&w=2070&auto=format&fit=crop", // Harvest
-  "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop", // Raw seeds
+  "/images/makhana_snacking.png", // Snacking
+  "/images/makhana_lotus_pond.png", // Lotus Pond
+  "/images/makhana_harvest.png", // Harvest
+  "/images/makhana_raw_seeds.png", // Raw seeds
 ];
 
 export default function S2_WhatIsMakhana() {

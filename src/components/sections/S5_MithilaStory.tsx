@@ -87,7 +87,7 @@ export default function S5_MithilaStory() {
         {/* Right: Image */}
         <div className="s5-item relative w-full max-h-[50vh] md:max-h-none md:aspect-[4/5] bg-gray-200 border-4 border-brand-black shadow-[16px_16px_0_rgba(0,0,0,1)] rounded-3xl overflow-hidden md:rotate-2">
           <img 
-            src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop" 
+            src="/images/makhana_ancient_roots.png" 
             alt="Mithila Origin" 
             className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
           />

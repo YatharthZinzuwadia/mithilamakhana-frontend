@@ -62,8 +62,8 @@ export default function S4_CraftedInMithila() {
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
-                src="https://images.unsplash.com/photo-1615486171448-4fd1ab6c9682?q=80&w=2000&auto=format&fit=crop" 
-                alt="Slow Roasted"
+                src="/images/makhana_snacking.png" 
+                alt="Flavour burst"
                 className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -95,7 +95,7 @@ export default function S4_CraftedInMithila() {
 
           {/* Small Feature 2 */}
           <div className="bento-item relative rounded-[2rem] border-4 border-brand-black overflow-hidden shadow-[8px_8px_0_rgba(0,0,0,1)] bg-[#2D3748] p-8 flex flex-col items-center justify-center group">
-            <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600')] bg-cover bg-center" />
+            <div className="absolute inset-0 opacity-10 bg-[url('/images/makhana_raw_seeds.png')] bg-cover bg-center" />
             <div className="relative z-10 text-center">
               <h3 className="font-display font-black text-4xl uppercase text-[#F2C94C] mb-2 drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">
                 Bold Flavor

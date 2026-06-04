@@ -43,7 +43,7 @@ export default function S11_WhyMakhanaWins() {
         <div className="bg-white border-2 border-brand-black/20 shadow-[6px_6px_0_rgba(0,0,0,0.25)] p-2 pb-8 w-36">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&q=80"
+            src="/images/makhana_lotus_pond.png"
             alt="Farm view"
             className="w-full h-28 object-cover"
           />
@@ -56,7 +56,7 @@ export default function S11_WhyMakhanaWins() {
         <div className="bg-white border-2 border-brand-black/20 shadow-[6px_6px_0_rgba(0,0,0,0.25)] p-2 pb-8 w-32">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400&q=80"
+            src="/images/makhana_roasting.png"
             alt="Makhana roasting"
             className="w-full h-24 object-cover"
           />
@@ -69,7 +69,7 @@ export default function S11_WhyMakhanaWins() {
         <div className="bg-white border-2 border-brand-black/20 shadow-[4px_4px_0_rgba(0,0,0,0.2)] p-2 pb-6 w-24">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=300&q=80"
+            src="/images/makhana_harvest.png"
             alt="Lotus pond"
             className="w-full h-16 object-cover"
           />

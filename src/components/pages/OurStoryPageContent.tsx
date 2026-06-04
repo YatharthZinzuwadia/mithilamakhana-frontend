@@ -14,28 +14,28 @@ const timeline = [
     title: "Ancient Roots",
     text: "Makhana cultivation begins in the wetlands of Mithila region, Bihar. Ancient Ayurvedic texts reference lotus seeds as a sacred, healing food.",
     color: "#E8B430",
-    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80",
+    image: "/images/makhana_ancient_roots.png",
   },
   {
     year: "1400s",
     title: "Royal Pantries",
     text: "Makhana becomes a prized ingredient in the royal kitchens of Mithila kingdom. Offered in temple prasad and grand feasts.",
     color: "#6FCF97",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    image: "/images/makhana_roasting.png",
   },
   {
     year: "2000s",
     title: "The Export Surge",
     text: "India becomes the world's largest producer of Makhana, accounting for 90%+ of global production, yet it remains largely unknown to the modern consumer.",
     color: "#D93838",
-    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef4564?w=800&q=80",
+    image: "/images/makhana_harvest.png",
   },
   {
     year: "Today",
     title: "Mithila Mantra Makhanas is Born",
     text: "We take this 2500-year-old superfood and make it the snack the world deserves to know. From Darbhanga, Bihar — to every pantry, as Mithila Mantra Makhanas.",
     color: "#F2C94C",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
+    image: "/images/makhana_snacking.png",
   },
 ];
 

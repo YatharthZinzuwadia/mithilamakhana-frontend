@@ -5,36 +5,36 @@ import Image from "next/image";
 
 // High-quality Unsplash placeholders - replace src values with actual client farm photos
 // by dropping them into /public/images/ and updating the src paths below.
-const farmImages = [
+const PARALLAX_CARDS = [
   {
-    src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=900&q=80",
+    src: "/images/makhana_lotus_pond.png",
     alt: "Lotus pond at dawn – Mithila Mantra farm",
     label: "Bihar Lotus Ponds",
   },
   {
-    src: "https://images.unsplash.com/photo-1500937386664-56d1dfef4564?w=900&q=80",
+    src: "/images/makhana_harvest.png",
     alt: "Makhana harvest season in Mithila",
     label: "Harvest Season",
   },
   {
-    src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=900&q=80",
+    src: "/images/makhana_raw_seeds.png",
     alt: "Green farmland in Bihar",
     label: "Fertile Mithila Soil",
   },
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80",
+    src: "/images/makhana_roasting.png",
     alt: "Sunrise over Mithila paddy fields",
     label: "Sunrise on the Farm",
   },
   {
-    src: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=900&q=80",
+    src: "/images/makhana_snacking.png",
     alt: "Fresh produce ready for roasting",
     label: "Fresh Harvest",
-  },
+  }
 ];
 
 // We double the list so the seamless loop never shows a gap
-const doubled = [...farmImages, ...farmImages];
+const doubled = [...PARALLAX_CARDS, ...PARALLAX_CARDS];
 
 export default function S15_FarmParallaxCarousel() {
   return (

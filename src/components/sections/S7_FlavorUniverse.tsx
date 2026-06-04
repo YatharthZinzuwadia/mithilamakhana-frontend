@@ -10,12 +10,12 @@ if (typeof window !== "undefined") {
 }
 
 const FLAVORS = [
-  { id: 1, name: "Raw Makhana", color: "#E8B430", heat: "None", bgImage: "https://images.unsplash.com/photo-1627485937980-221c88ce04ea?q=80&w=2000", productImg: "/images/product_pouch_raw.png" },
-  { id: 2, name: "Peri Peri", color: "#D93838", heat: "Hot", bgImage: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070", productImg: "/images/product_pouch_periperi.png" },
-  { id: 3, name: "Cheese", color: "#F2C94C", heat: "Mild", bgImage: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=2000", productImg: "/images/product_pouch_cheese.png" },
-  { id: 4, name: "Cream & Onion", color: "#6FCF97", heat: "Mild", bgImage: "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=2000", productImg: "/images/product_pouch_cheese.png" },
-  { id: 5, name: "Pudina", color: "#27AE60", heat: "Mild", bgImage: "https://images.unsplash.com/photo-1615486171448-4fd1ab6c9682?q=80&w=2000", productImg: "/images/product_pouch_raw.png" },
-  { id: 6, name: "Black Pepper", color: "#2D3748", heat: "Medium", bgImage: "https://images.unsplash.com/photo-1508215885820-4585e5610ea0?q=80&w=2000", productImg: "/images/product_pouch_pepper.png" }
+  { id: 1, name: "Raw Makhana", color: "#E8B430", heat: "None", bgImage: "/images/makhana_raw_seeds.png", productImg: "/images/product_pouch_raw.png" },
+  { id: 2, name: "Peri Peri", color: "#D93838", heat: "Hot", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_periperi.png" },
+  { id: 3, name: "Cheese", color: "#F2C94C", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_cheese.png" },
+  { id: 4, name: "Cream & Onion", color: "#6FCF97", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_cheese.png" },
+  { id: 5, name: "Pudina", color: "#27AE60", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_raw.png" },
+  { id: 6, name: "Black Pepper", color: "#2D3748", heat: "Medium", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_pepper.png" }
 ];
 
 export default function S7_FlavorUniverse() {

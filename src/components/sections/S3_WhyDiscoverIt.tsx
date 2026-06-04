@@ -39,14 +39,12 @@ export default function S3_WhyDiscoverIt() {
 
   return (
     <section ref={sectionRef} className="relative w-full min-h-screen flex items-center justify-center bg-[#D93838] overflow-hidden border-b-8 border-brand-black">
-      {/* Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply pointer-events-none"
-        src="https://assets.mixkit.co/videos/preview/mixkit-waffle-with-syrup-and-strawberries-in-macro-shot-43750-large.mp4" 
+      {/* Image Background */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/makhana_snacking.png"
+        alt="Makhana snacking background"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-multiply pointer-events-none"
       />
 
       {/* ── Auto-pulsing image blobs ──────────────────────────────── */}
@@ -56,7 +54,7 @@ export default function S3_WhyDiscoverIt() {
         <div className="w-40 h-40 md:w-56 md:h-56 rounded-3xl overflow-hidden border-4 border-white shadow-[8px_8px_0_rgba(0,0,0,0.6)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80"
+            src="/images/makhana_lotus_pond.png"
             alt="Lotus pond – Mithila farm"
             className="w-full h-full object-cover"
           />
@@ -71,7 +69,7 @@ export default function S3_WhyDiscoverIt() {
         <div className="w-44 h-44 md:w-60 md:h-60 rounded-3xl overflow-hidden border-4 border-[#F2C94C] shadow-[8px_8px_0_rgba(0,0,0,0.6)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1500937386664-56d1dfef4564?w=600&q=80"
+            src="/images/makhana_harvest.png"
             alt="Makhana harvest"
             className="w-full h-full object-cover"
           />
@@ -86,7 +84,7 @@ export default function S3_WhyDiscoverIt() {
         <div className="w-36 h-36 md:w-48 md:h-48 rounded-3xl overflow-hidden border-4 border-brand-black shadow-[8px_8px_0_rgba(0,0,0,0.6)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&q=80"
+            src="/images/makhana_roasting.png"
             alt="Roasting process"
             className="w-full h-full object-cover"
           />
