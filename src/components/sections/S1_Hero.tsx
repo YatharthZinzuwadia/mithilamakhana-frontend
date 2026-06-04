@@ -113,7 +113,7 @@ export default function S1_Hero() {
               }}
             >
               MITHILA<br/>
-              MAKHANA!
+              MANTRA!
             </h1>
             
             {/* Funky Starburst Badge */}
