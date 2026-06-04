@@ -50,7 +50,7 @@ export default function S1_Hero() {
       {/* Top Marquee (stays full width) */}
       <div className="absolute top-0 left-0 w-full bg-brand-gold text-brand-black py-2 z-20 overflow-hidden transform -skew-y-1 origin-top-left border-b-4 border-brand-black shadow-xl">
         <div className="flex whitespace-nowrap animate-[marquee_15s_linear_infinite] font-display text-lg md:text-xl font-black uppercase">
-          &nbsp;MITHILA MAKHANA • THE HEALTHIEST CRUNCH • MITHILA MAKHANA • THE HEALTHIEST CRUNCH • MITHILA MAKHANA • THE HEALTHIEST CRUNCH • 
+          &nbsp;MITHILA MANTRA • THE HEALTHIEST CRUNCH • MITHILA MANTRA • THE HEALTHIEST CRUNCH • MITHILA MANTRA • THE HEALTHIEST CRUNCH • 
         </div>
       </div>
 
