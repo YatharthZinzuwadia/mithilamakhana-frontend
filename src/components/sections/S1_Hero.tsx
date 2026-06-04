@@ -117,7 +117,7 @@ export default function S1_Hero() {
             </h1>
             
             {/* Funky Starburst Badge */}
-            <div className="absolute -top-12 md:-top-16 right-0 md:right-16 w-24 h-24 md:w-32 md:h-32 bg-[#FF007F] rounded-full flex items-center justify-center animate-[spin_8s_linear_infinite] shadow-[6px_6px_0_rgba(0,0,0,1)] border-4 md:border-8 border-brand-black">
+            <div className="absolute -top-20 right-0 md:-top-16 md:right-16 w-24 h-24 md:w-32 md:h-32 bg-[#FF007F] rounded-full flex items-center justify-center animate-[spin_8s_linear_infinite] shadow-[6px_6px_0_rgba(0,0,0,1)] border-4 md:border-8 border-brand-black transform scale-75 md:scale-100 origin-center">
               <span className="font-black text-white text-center leading-tight rotate-12 uppercase text-sm md:text-lg" style={{ textShadow: "2px 2px 0px black" }}>
                 100%<br/>CRUNCH!
               </span>
