@@ -92,7 +92,7 @@ export default function S11_WhyMakhanaWins() {
           
           <div className="bg-white rounded-2xl border-4 border-brand-black p-6 shadow-[6px_6px_0_rgba(0,0,0,0.5)]">
             <h3 className="font-display font-black text-2xl uppercase mb-6 text-center tracking-tight border-b-2 border-brand-black/10 pb-4">
-              The Nutritional Edge <span className="text-sm font-bold block text-gray-500 normal-case tracking-normal mt-1">(per 100g)</span>
+              The Nutrition Edge <span className="text-sm font-bold block text-gray-500 normal-case tracking-normal mt-1">(per 100g)</span>
             </h3>
 
             {/* Protein Comparison */}
