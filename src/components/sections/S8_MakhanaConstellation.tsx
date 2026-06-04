@@ -21,31 +21,53 @@ export default function S8_MakhanaConstellation() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".process-step", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
-        y: 60,
-        opacity: 0,
-        rotation: () => Math.random() * 10 - 5,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: "back.out(1.5)"
-      });
-      
-      gsap.from(".process-connector", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
-        scaleX: 0,
-        transformOrigin: "left center",
-        stagger: 0.15,
-        duration: 0.5,
-        delay: 0.2,
-        ease: "power2.out"
-      });
+      // Check window width for responsive animation styles
+      const isMobile = window.innerWidth < 1024;
+
+      if (!isMobile) {
+        gsap.from(".process-step", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
+          y: 60,
+          opacity: 0,
+          rotation: () => Math.random() * 10 - 5,
+          stagger: 0.15,
+          duration: 0.8,
+          ease: "back.out(1.5)"
+        });
+        
+        gsap.from(".process-connector", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
+          scaleX: 0,
+          transformOrigin: "left center",
+          stagger: 0.15,
+          duration: 0.5,
+          delay: 0.2,
+          ease: "power2.out"
+        });
+      } else {
+        // Mobile steps animate individually as they enter the screen
+        const mobileSteps = gsap.utils.toArray(".process-step-mobile");
+        mobileSteps.forEach((step: any) => {
+          gsap.from(step, {
+            scrollTrigger: {
+              trigger: step,
+              start: "top 92%",
+              toggleActions: "play none none none"
+            },
+            y: 40,
+            opacity: 0,
+            rotation: () => Math.random() * 6 - 3,
+            duration: 0.6,
+            ease: "power2.out"
+          });
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -92,7 +114,7 @@ export default function S8_MakhanaConstellation() {
         {/* Mobile & Tablet Process Flow (Vertical) */}
         <div className="lg:hidden flex flex-col items-center gap-8 mt-10">
           {processSteps.map((step, index) => (
-            <div key={step.id} className="process-step relative flex flex-col items-center text-center bg-white/10 p-6 rounded-3xl border-2 border-white/20 w-full max-w-sm">
+            <div key={step.id} className="process-step-mobile relative flex flex-col items-center text-center bg-white/10 p-6 rounded-3xl border-2 border-white/20 w-full max-w-sm">
               <div className="w-20 h-20 bg-white text-brand-black rounded-full border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] flex items-center justify-center text-3xl mb-4 transform -rotate-3">
                 {step.icon}
               </div>
