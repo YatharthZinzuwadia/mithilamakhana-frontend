@@ -114,7 +114,7 @@ export default function NutritionPageContent() {
     <main ref={pageRef} className="w-full min-h-screen bg-brand-white pb-40 md:pb-32">
       {/* Hero */}
       <section className="py-16 pt-32 md:pt-40 text-center px-4 sm:px-6 border-b-8 border-brand-black bg-[#6FCF97]">
-        <h1 className="nutr-hero font-display text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[5px_5px_0_rgba(0,0,0,1)] text-brand-black leading-tight">
+        <h1 className="nutr-hero font-display text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter drop-shadow-[3px_3px_0_rgba(0,0,0,1)] sm:drop-shadow-[5px_5px_0_rgba(0,0,0,1)] text-white leading-tight">
           Our Quality Promise
         </h1>
         <p className="nutr-hero font-body text-base sm:text-xl md:text-2xl font-bold mt-4 max-w-2xl mx-auto text-brand-black bg-white px-4 sm:px-6 py-3 rounded-2xl border-4 border-brand-black shadow-[6px_6px_0_rgba(0,0,0,1)] inline-block transform -rotate-1">
