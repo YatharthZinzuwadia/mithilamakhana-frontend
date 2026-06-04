@@ -91,11 +91,11 @@ export default function S9_WhoEatsMithilaMantra() {
               </div>
 
               {/* Content */}
-              <div className="p-8 flex flex-col flex-1">
+              <div className="p-5 sm:p-8 flex flex-col flex-1">
                 <span className="font-bold uppercase tracking-widest text-xs text-brand-black/50 mb-2">
                   {a.subtitle}
                 </span>
-                <h3 className="font-display font-black text-3xl uppercase tracking-tight mb-4">
+                <h3 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight mb-4">
                   {a.title}
                 </h3>
                 <p className="font-body font-bold text-base md:text-lg text-brand-black/80 leading-relaxed flex-1">
