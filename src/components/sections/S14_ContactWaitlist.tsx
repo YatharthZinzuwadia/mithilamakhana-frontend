@@ -59,6 +59,13 @@ function WaitlistForm() {
         {status === "loading" ? "Subscribing..." : status === "success" ? "Subscribed!" : "Subscribe"}
       </button>
       {status === "error" && <p className="text-red-500 text-sm font-bold mt-1">Failed. Please try again.</p>}
+      <p className="text-[10px] text-brand-black/50 font-bold mt-2 leading-tight">
+        Protected by reCAPTCHA. Google{" "}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-black">Privacy Policy</a>{" "}
+        and{" "}
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-black">Terms</a>{" "}
+        apply.
+      </p>
     </form>
   );
 }

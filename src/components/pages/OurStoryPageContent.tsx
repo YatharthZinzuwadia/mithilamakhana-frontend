@@ -14,7 +14,7 @@ const timeline = [
     title: "Ancient Roots",
     text: "Makhana cultivation begins in the wetlands of Mithila region, Bihar. Ancient Ayurvedic texts reference lotus seeds as a sacred, healing food.",
     color: "#E8B430",
-    image: "/images/makhana_ancient_roots.png",
+    image: "/products/makhana-in-a-bowl-photo-no-bg.png",
   },
   {
     year: "1400s",
@@ -35,7 +35,7 @@ const timeline = [
     title: "Mithila Mantra Makhanas is Born",
     text: "We take this 2500-year-old superfood and make it the snack the world deserves to know. From Darbhanga, Bihar — to every pantry, as Mithila Mantra Makhanas.",
     color: "#F2C94C",
-    image: "/images/makhana_snacking.png",
+    image: "/products/all-products-banner.jpg",
   },
 ];
 

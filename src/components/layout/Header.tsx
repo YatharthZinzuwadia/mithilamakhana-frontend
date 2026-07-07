@@ -12,7 +12,7 @@ const flavoursList = [
   { name: "Cheese", color: "#F2C94C" },
   { name: "Cream & Onion", color: "#6FCF97" },
   { name: "Pudina", color: "#27AE60" },
-  { name: "Black Pepper", color: "#2D3748" }
+  { name: "Magic Masala", color: "#C67C3B" }
 ];
 
 export default function Header() {
@@ -67,15 +67,9 @@ export default function Header() {
         {/* Logo */}
         <div className="flex-1 flex items-center min-w-0">
           <Link href="/" className="group flex items-center gap-2 min-w-0">
-            <div className="w-7 h-7 md:w-8 md:h-8 bg-[#D93838] border-2 border-brand-black rounded-full group-hover:scale-110 transition-transform flex items-center justify-center flex-shrink-0">
-              <span className="font-black text-white text-[10px] md:text-xs">MM</span>
+            <div className="h-10 md:h-12 flex items-center justify-center flex-shrink-0">
+              <img src="/mithilamantralogo.png" alt="Mithila Mantra Makhana Logo" className="h-full w-auto object-contain" />
             </div>
-            <span className={clsx(
-              "font-display font-black text-base md:text-2xl tracking-tighter uppercase transition-colors truncate",
-              shouldApplyScrolledStyle ? "text-brand-black" : "text-brand-white"
-            )}>
-              Mithila Mantra
-            </span>
           </Link>
         </div>
         
