@@ -10,12 +10,11 @@ if (typeof window !== "undefined") {
 }
 
 const FLAVORS = [
-  { id: 1, name: "Raw Makhana", color: "#E8B430", heat: "None", bgImage: "/images/makhana_raw_seeds.png", productImg: "/images/product_pouch_raw.png" },
-  { id: 2, name: "Peri Peri", color: "#D93838", heat: "Hot", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_periperi.png" },
-  { id: 3, name: "Cheese", color: "#F2C94C", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_cheese.png" },
-  { id: 4, name: "Cream & Onion", color: "#6FCF97", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_cheese.png" },
-  { id: 5, name: "Pudina", color: "#27AE60", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_raw.png" },
-  { id: 6, name: "Black Pepper", color: "#2D3748", heat: "Medium", bgImage: "/images/makhana_snacking.png", productImg: "/images/product_pouch_pepper.png" }
+  { id: 1, name: "Peri Peri", color: "#D93838", heat: "Hot", bgImage: "/images/makhana_snacking.png", productImg: "/products/peri-peri-flavour-no-bg.png" },
+  { id: 2, name: "Cheese", color: "#F2C94C", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/products/cheese-flavour-no-bg.jpg" },
+  { id: 3, name: "Cream & Onion", color: "#6FCF97", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/products/cream-and-onion-flavour-no-bg.png" },
+  { id: 4, name: "Pudina", color: "#27AE60", heat: "Mild", bgImage: "/images/makhana_snacking.png", productImg: "/products/pudina-flavour-no-bg.png" },
+  { id: 5, name: "Magic Masala", color: "#C67C3B", heat: "Medium", bgImage: "/images/makhana_snacking.png", productImg: "/products/magic-masala-flavour-no-bg.png" }
 ];
 
 export default function S7_FlavorUniverse() {

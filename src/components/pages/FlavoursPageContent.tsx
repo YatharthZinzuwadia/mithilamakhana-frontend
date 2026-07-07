@@ -12,20 +12,6 @@ if (typeof window !== "undefined") {
 
 const flavors = [
   {
-    id: "raw",
-    name: "Raw Makhana",
-    tagline: "Pure. Unadulterated. Original.",
-    description:
-      "The one that started it all. Harvested from the lotus ponds of Bihar, these are slow-roasted with zero artificial flavoring. The purest form of healthy snacking.",
-    ingredients: ["Lotus Seeds (Makhana)", "Rock Salt", "Cold-pressed Oil"],
-    nutrition: { protein: "9.7g", fat: "0.1g", calories: "347 kcal", fiber: "14.5g" },
-    color: "#E8B430",
-    bg: "bg-[#FFF9E6]",
-    badge: "Best Seller",
-    heat: "Mild",
-    image: "/products/makhana-in-a-bowl-photo-no-bg.png",
-  },
-  {
     id: "periperi",
     name: "Peri Peri",
     tagline: "Fiery. Bold. Addictive.",
@@ -37,7 +23,8 @@ const flavors = [
     bg: "bg-[#FFF0F0]",
     badge: "Fan Favourite",
     heat: "Spicy",
-    image: "/products/peri-peri-flavour-no-bg.png",
+    image: "/products/peri-peri-flavour-bg.jpg",
+    thumbnail: "/products/peri-peri-flavour-no-bg.png",
   },
   {
     id: "cheese",
@@ -51,7 +38,8 @@ const flavors = [
     bg: "bg-[#FFFBE6]",
     badge: "Kid Approved",
     heat: "Mild",
-    image: "/products/cheese-flavour-no-bg.jpg",
+    image: "/products/cheese-flavour-bg.jpg",
+    thumbnail: "/products/cheese-flavour-no-bg.jpg",
   },
   {
     id: "cream-onion",
@@ -65,7 +53,8 @@ const flavors = [
     bg: "bg-[#F0FFF6]",
     badge: "New Arrival",
     heat: "Mild",
-    image: "/products/cream-and-onion-flavour-no-bg.png",
+    image: "/products/cream-and-onion-flavour-bg.jpg",
+    thumbnail: "/products/cream-and-onion-flavour-no-bg.png",
   },
   {
     id: "pudina",
@@ -79,7 +68,8 @@ const flavors = [
     bg: "bg-[#F0FFF8]",
     badge: "Summer Pick",
     heat: "Mild",
-    image: "/products/pudina-flavour-no-bg.png",
+    image: "/products/pudina-magic-masala-flavour-bg.jpg",
+    thumbnail: "/products/pudina-flavour-no-bg.png",
   },
   {
     id: "magic-masala",
@@ -93,7 +83,8 @@ const flavors = [
     bg: "bg-[#FFF4E6]",
     badge: "Chef's Choice",
     heat: "Medium",
-    image: "/products/magic-masala-flavour-no-bg.png",
+    image: "/products/pudina-magic-masala-flavour-bg.jpg",
+    thumbnail: "/products/magic-masala-flavour-no-bg.png",
   },
 ];
 
@@ -198,19 +189,18 @@ export default function FlavoursPageContent() {
           {/* Subtle background pattern */}
           <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'radial-gradient(#000 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
-          {/* Left: Product Image & Badges */}
-          <div className="relative w-full lg:w-1/2 flex flex-col items-center justify-center p-6 sm:p-10 lg:border-r-8 lg:border-brand-black bg-white/10 backdrop-blur-sm">
-            <span className="bg-brand-black text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-black uppercase tracking-widest text-xs sm:text-sm border-2 border-white shadow-[4px_4px_0_rgba(0,0,0,1)] mb-4 sm:mb-8 transform -rotate-2">
-              {activeFlavor.heat} Heat
-            </span>
-            
-            <div className="relative w-44 h-56 sm:w-64 sm:h-80 md:w-80 md:h-[400px] hover:scale-105 hover:rotate-3 transition-transform duration-500 z-10 drop-shadow-[20px_20px_0_rgba(0,0,0,0.4)]">
+          {/* Left: Product Image */}
+          <div className="relative w-full lg:w-1/2 flex flex-col items-center justify-center p-0 lg:border-r-8 lg:border-brand-black bg-brand-black">
+            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full group overflow-hidden">
               <Image
                 src={activeFlavor.image}
                 alt={activeFlavor.name}
                 fill
-                className="object-contain"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
+              <span className="absolute top-4 left-4 bg-brand-black text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-black uppercase tracking-widest text-xs sm:text-sm border-2 border-white shadow-[4px_4px_0_rgba(0,0,0,1)] transform -rotate-2 z-10">
+                {activeFlavor.heat} Heat
+              </span>
             </div>
           </div>
 
@@ -260,7 +250,7 @@ export default function FlavoursPageContent() {
         <h3 className="font-display font-black text-xl sm:text-2xl uppercase tracking-tighter mb-4 sm:mb-6 text-brand-black">
           Explore {filter === "All" ? "All" : filter} Flavors
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pb-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pb-20">
           {filteredFlavors.map((f) => (
             <div key={f.id} className="flavor-card">
               <button
@@ -281,7 +271,7 @@ export default function FlavoursPageContent() {
                 )}
 
                 <div className="relative w-24 h-32 md:w-32 md:h-40 mt-4 group-hover:scale-110 transition-transform">
-                  <Image src={f.image} alt={f.name} fill className="object-contain drop-shadow-md" />
+                  <Image src={f.thumbnail} alt={f.name} fill className="object-contain drop-shadow-md" />
                 </div>
                 <span className="font-display font-black text-xs uppercase text-center leading-tight mt-auto text-brand-black">
                   {f.name}
