@@ -14,7 +14,7 @@ const timeline = [
     title: "Ancient Roots",
     text: "Makhana cultivation begins in the wetlands of Mithila region, Bihar. Ancient Ayurvedic texts reference lotus seeds as a sacred, healing food.",
     color: "#E8B430",
-    image: "/products/makhana-in-a-bowl-photo-no-bg.png",
+    image: "/images/makhana_ancient_roots.png",
   },
   {
     year: "1400s",
