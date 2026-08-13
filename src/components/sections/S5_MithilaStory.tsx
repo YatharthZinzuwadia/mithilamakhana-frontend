@@ -88,11 +88,11 @@ export default function S5_MithilaStory() {
         </div>
 
         {/* Right: Image */}
-        <div className="s5-item relative w-full max-h-[50vh] md:max-h-none md:aspect-[4/5] bg-gray-200 border-4 border-brand-black shadow-[16px_16px_0_rgba(0,0,0,1)] rounded-3xl overflow-hidden md:rotate-2 bg-gradient-to-br from-[#FFF9E6] to-[#F2C94C]/20">
+        <div className="s5-item relative w-full max-h-[50vh] md:max-h-none md:aspect-[4/5] bg-gray-200 border-4 border-brand-black shadow-[16px_16px_0_rgba(0,0,0,1)] rounded-3xl overflow-hidden md:rotate-2">
           <img 
-            src="/products/makhana-in-a-bowl-photo-no-bg.png" 
-            alt="Mithila Origin Bowl" 
-            className="w-full h-full object-cover md:object-contain hover:scale-110 transition-transform duration-700"
+            src="/images/mithila_lotus_story.png" 
+            alt="Lotus ponds of Mithila, Bihar" 
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
           />
         </div>
 
