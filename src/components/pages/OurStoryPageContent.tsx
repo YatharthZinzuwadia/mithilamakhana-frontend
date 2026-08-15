@@ -147,7 +147,7 @@ export default function OurStoryPageContent() {
                       style={{ transform: `rotate(${i % 2 === 0 ? -1 : 1}deg)` }}
                     >
                       <span
-                        className="font-black text-sm uppercase tracking-widest block mb-3 px-3 py-1 bg-brand-black rounded-full inline-block"
+                        className="font-black text-sm uppercase tracking-widest block mb-3 px-3 py-1 bg-brand-black rounded-full "
                         style={{ color: t.color }}
                       >
                         {t.year}
@@ -159,7 +159,7 @@ export default function OurStoryPageContent() {
 
                   {/* Center dot */}
                   <div
-                    className="w-10 h-10 rounded-full border-4 border-brand-black flex-shrink-0 hidden md:flex items-center justify-center shadow-[4px_4px_0_rgba(0,0,0,1)] z-10"
+                    className="w-10 h-10 rounded-full border-4 border-brand-black shrink-0 hidden md:flex items-center justify-center shadow-[4px_4px_0_rgba(0,0,0,1)] z-10"
                     style={{ backgroundColor: t.color }}
                   >
                     <div className="w-3 h-3 bg-white rounded-full" />
@@ -168,7 +168,7 @@ export default function OurStoryPageContent() {
                   {/* Image Content */}
                   <div className="w-full md:w-[45%]">
                     <div 
-                      className="w-full aspect-video md:aspect-[4/3] rounded-3xl border-4 border-brand-black overflow-hidden shadow-[10px_10px_0_rgba(0,0,0,1)] group"
+                      className="w-full aspect-video md:aspect-4/3 rounded-3xl border-4 border-brand-black overflow-hidden shadow-[10px_10px_0_rgba(0,0,0,1)] group"
                       style={{ transform: `rotate(${i % 2 === 0 ? 2 : -2}deg)` }}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -209,7 +209,7 @@ export default function OurStoryPageContent() {
 
       {/* Team / Origin */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-        <div className="bg-[#E8B430] border-4 border-brand-black rounded-3xl p-5 sm:p-10 shadow-[8px_8px_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_rgba(0,0,0,1)] transform -rotate-1">
+        <div className="bg-brand-gold border-4 border-brand-black rounded-3xl p-5 sm:p-10 shadow-[8px_8px_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_rgba(0,0,0,1)] transform -rotate-1">
           <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-brand-black">
             Where It All Happens
           </h2>
